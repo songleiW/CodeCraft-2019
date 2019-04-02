@@ -27,9 +27,7 @@ public class CreateRoad {
 			ArrayList<String> roadID=new ArrayList<String>();
 			while ((line = br.readLine()) != null) {
 				String[] strings = line.substring(1, line.length() - 1).split(",");
-				Road road = new Road();
-				// #(id,length,speed,channel,from,to,isDuplex)
-				road.initRoad(strings[0].trim(), //车道ID
+				Road road=new Road(strings[0].trim(), //车道ID
 						Integer.parseInt(strings[1].trim()), //车道长度
 						Integer.parseInt(strings[2].trim()), //车道限速
 						Integer.parseInt(strings[3].trim()),//车道数目

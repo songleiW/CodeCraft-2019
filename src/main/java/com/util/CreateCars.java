@@ -22,15 +22,24 @@ public class CreateCars {
 			ArrayList<String> carID=new ArrayList<String>();
 			while ((line = br.readLine()) != null) {
 				String[] strings = line.substring(1, line.length() - 1).split(",");
-				Car car = new Car();
-				// #(id,from,to,speed,planTime) 
-				car.setId(strings[0].trim());//设置车辆ID
-				car.setFrom(strings[1].trim());//设置car起点
-				car.setTo(strings[2].trim());//设置车辆目的地
-				car.setMaxSpeed(Integer.parseInt(strings[3].trim()));//设置车辆最大速度
-				car.setPlanTime(Integer.parseInt(strings[4].trim()));//设置计划开始时间
-				cars.put(car.getId().trim(), car);//向hashmap中添加car
+				Car car = new Car(strings[0].trim(),strings[1].trim(),strings[2].trim(),
+						Integer.parseInt(strings[3].trim()),Integer.parseInt(strings[4].trim()));
+				cars.put(car.getId(), car);//向hashmap中添加car
 				carID.add(car.getId());
+			}
+			//按速度对车进行排序  速度大的早发车
+			for(int i=0;i<carID.size()-1;i++)
+			{
+				for(int j=i+1;j<carID.size();j++)
+				{
+					Car car1=cars.get(carID.get(i));
+					Car car2=cars.get(carID.get(j));
+					if(car1.getMaxSpeed()<car2.getMaxSpeed())
+					{
+						carID.set(i, car2.getId());
+						carID.set(j, car1.getId());
+					}
+				}
 			}
 			return carID;
 		} catch (IOException e) {

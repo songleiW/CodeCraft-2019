@@ -55,13 +55,13 @@ public class Channel {
 		carPortList.add(car);
 		int weight=nowCarsNumber;//修改对应道路的权值  防止拥堵 
 		
-		Dijkstra.g.updateEdge(Main.crossList.indexOf(from), Main.crossList.indexOf(to), weight);
+		Dijkstra.g.updateEdge(from,to, weight);
 		car.realRoute.add(car.nowOnChannel.ID);//添加实际的行车路线
 	}
 	public void removeCar(Car car) {
 		int weight=nowCarsNumber;
 		nowCarsNumber--;
 		carPortList.remove(0);
-		Dijkstra.g.updateEdge(Main.crossList.indexOf(from), Main.crossList.indexOf(to), -weight);
+		Dijkstra.g.updateEdge(from, to, -weight);
 	}
 }

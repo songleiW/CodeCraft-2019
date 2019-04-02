@@ -21,14 +21,12 @@ public class CreateStation {
 			ArrayList<String> stationID=new ArrayList<String>();
 			while ((line = br.readLine()) != null) {
 				String[] strings = line.substring(1, line.length() - 1).split(",");
-				Station station = new Station();
+
 				// #(id,roadId,roadId,roadId,roadId)
-				station.setId(strings[0].trim());
-				station.setToRoad(strings[1].trim(),strings[2].trim(),
-						            strings[3].trim(),strings[4].trim());
+				Station station = new Station(strings[0].trim(),strings[1].trim(),strings[2].trim(),
+			            strings[3].trim(),strings[4].trim());
 				stations.put(station.getId().trim(), station);
 				stationID.add(station.getId());
-				Main.crossList.add(station.getId());
 			}
 			return stationID;
 		} catch (IOException e) {

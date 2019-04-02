@@ -1,20 +1,22 @@
 package com.util;
 import java.util.*;
+
+import com.common.Car;
 public class Graph {
-  private ArrayList<Vertex> vertices;
-	public Graph(int numberVertices){
-		vertices = new ArrayList<Vertex>(numberVertices);
-		for(int i=0;i<numberVertices;i++){
-			vertices.add(new Vertex(Integer.toString(i)));
+	private Hashtable<String, Vertex> vertices=new Hashtable<String, Vertex>();//节点map
+	public Graph(ArrayList<String> stationId){
+		for(String id:stationId)
+		{
+			vertices.put(id, new Vertex(id));//添加节点
 		}
 	}
 	
-	public void addEdge(int src, int dest, int weight){
+	public void addEdge(String src, String  dest, int weight){
 		Vertex s = vertices.get(src);
 		Edge new_edge = new Edge(vertices.get(dest),weight);
 		s.neighbours.add(new_edge);
 	}
-	public void updateEdge(int src,int dest,int number)
+	public void updateEdge(String src,String dest,int number)
 	{
 		Vertex s = vertices.get(src);
 		Vertex d = vertices.get(dest);
@@ -27,11 +29,11 @@ public class Graph {
 			}
 		}
 	}
-	public ArrayList<Vertex> getVertices() {
+	public Hashtable<String, Vertex> getVertices() {
 		return vertices;
 	}
 	
-	public Vertex getVertex(int vert){
+	public Vertex getVertex(String vert){
 		return vertices.get(vert);
 	}
 }

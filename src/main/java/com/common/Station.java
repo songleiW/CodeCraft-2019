@@ -7,21 +7,15 @@ import java.util.Hashtable;
 import com.huawei.Main;
 
 public class Station {
-//#(id,roadId,roadId,roadId,roadId)
 	private String ID;
 	public ArrayList<String> toRoad=new ArrayList<String>();//路口通向的道路
 	public ArrayList<String> toStation=new ArrayList<String>();//路口通向的站点
 	private ArrayList<Integer> List=new ArrayList<Integer>();
 	public ArrayList<Road> roadList=new ArrayList<Road>();
-	public String getId() {
-		return ID;
-	}
-
-	public void setId(String id) {
-		this.ID = id;
-	}
 	
-	public void setToRoad(String Up,String Right,String Down,String Left) {//设置通向的路
+	public Station(String id,String Up,String Right,String Down,String Left )
+	{
+		this.ID = id;
 		if(Integer.parseInt(Up)!=-1)
 		{
 			toRoad.add(Up);
@@ -52,14 +46,8 @@ public class Station {
 		}
 		setToStation();
 	}
-	public String getToStation(int i) {//根据编号得到通往的站点
-		return toStation.get(i);
-	}
-	public String getToRoad(int i) {//根据编号得到通往的路的编号
-		return toRoad.get(i);
-	}
 	private void setToStation() {//设置通向的站点
-		Road road =new Road();
+		Road road;
 		for(String roadId:toRoad)
 		{
 			if(roadId==null)
@@ -91,4 +79,13 @@ public class Station {
 		}
 	}
 	
+	public String getId() {
+		return ID;
+	}
+	public String getToStation(int i) {//根据编号得到通往的站点
+		return toStation.get(i);
+	}
+	public String getToRoad(int i) {//根据编号得到通往的路的编号
+		return toRoad.get(i);
+	}
 }

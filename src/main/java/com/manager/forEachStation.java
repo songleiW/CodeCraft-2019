@@ -19,7 +19,7 @@ public class forEachStation {
 		}
 	}
 	public static void manageOneStation(Station station) {//处理一个站
-		Car car =new Car();//存放每个第一优先级的车
+		Car car;//存放每个第一优先级的车
 		for(Road roadTemp:station.roadList)//依次按顺序处理路
 		{
 			while(true)//一直处理到本路没有车可以处理

@@ -13,7 +13,7 @@ public class StartCars {
 		for(int i=0;i<Main.carID.size();i++)
 		{
 			String ID=Main.carID.get(i);
-			Car car=Main.allCars.get(ID);
+			Car car=Main.allCars.get(ID);;
 			if(car.getPlanTime()<=Main.NOWTIME)//车辆到达发车时间
 			{
 				//if(car.nextChannels==null)//如果没有规划过路线 规划路线  防止程序运行时间太长
@@ -36,16 +36,8 @@ public class StartCars {
 		for(Channel channel:car.nextChannels)
 		{
 			sum+=channel.nowCarsNumber;
-			if(Main.graphNum)
-			{
-				//if(sum>=car.nextChannels.get(0).getLegnth())//如果当前道路内车的数量超过道路长度  就不发车
-				//	return false;
-			}
-			if(!Main.graphNum)
-			{
-				if(sum>=car.nextChannels.get(0).getLegnth())//如果当前道路内车的数量超过道路长度  就不发车
-					return false;
-			}
+			if(sum>=car.nextChannels.get(0).getLegnth())//如果当前道路内车的数量超过道路长度  就不发车
+				return false;
 			
 		}
 		for(Channel channel:car.nextChannels)//遍历车道
@@ -55,23 +47,11 @@ public class StartCars {
 				Car frontCar=channel.carPortList.get(channel.carPortList.size()-1);//获得最后一个车
 				if(frontCar.nowLocation==1)//本车道第一位有车 不能发车
 				{
-					if(Main.graphNum)//地图一
-					{
-						continue;
-						//return false;
-					}
-					else {
-						continue;
-						//return false;
-					}
-				}
-				if(!Main.graphNum&&frontCar.nowLocation<=speed)//如果不能以最大速度行驶  也不发车
-				{
 					return false;
 				}
-				if(Main.graphNum&&frontCar.nowLocation<=speed)//如果不能以最大速度行驶  也不发车
+				if(frontCar.nowLocation<=speed)//如果不能以最大速度行驶  也不发车
 				{
-					//return false;
+					return false;
 				}
 				//本车道第一个车位没有车 可以发车
 				car.nowOnChannel=channel;//设置车当前所在车道

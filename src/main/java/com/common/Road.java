@@ -7,18 +7,38 @@ import java.util.ArrayList;
 import java.util.ArrayList;
 import java.util.Arrays;
 public class Road {
-	// #(ID,length,maxSpeed,channel,startId,endId,isDuplex)
 	private String ID;
 	private int length;
 	private int maxSpeed;
 	private int channelNumber;
 	public int nowCarsNumber;
-	public ArrayList<Channel> forwardChannel=new ArrayList<Channel>();//正向车道list
-	public ArrayList<Channel> reverseChannel=new ArrayList<Channel>();//反向车道list
 	private String startId;
 	private String endId;
-	boolean isDuplex;
-	
+	private boolean isDuplex;
+	public ArrayList<Channel> forwardChannel=new ArrayList<Channel>();//正向车道list
+	public ArrayList<Channel> reverseChannel=new ArrayList<Channel>();//反向车道list
+	//构造函数
+	public Road(String id,int Length,int Speed,int channelNumber,String start,String end,boolean IsDuplex) {
+		setId(id);//设置车道ID
+		setLength(Length);
+		setMaxSpeed(Speed);
+		setChannelNumber(channelNumber);
+		setStartId(start);
+		setEndId(end);
+		setDuplex(IsDuplex);
+		for(int i=0;i<channelNumber;i++)
+		{
+			forwardChannel.add(new Channel(start,end,Length,Speed,id));//添加正向车道
+		}
+		if(IsDuplex)
+		{
+			for(int i=0;i<channelNumber;i++)
+			{
+				reverseChannel.add(new Channel(end,start,Length,Speed,id));//添加逆向车道
+			}
+		}
+		
+	}
 	public String getId() {
 		return ID;
 	}
@@ -69,27 +89,5 @@ public class Road {
 
 	public void setDuplex(boolean isDuplex) {
 		this.isDuplex = isDuplex;
-	}
-	//初始化道路
-	public void initRoad(String id,int Length,int Speed,int channelNumber,String start,String end,boolean IsDuplex) {
-		setId(id);//设置车道ID
-		setLength(Length);
-		setMaxSpeed(Speed);
-		setChannelNumber(channelNumber);
-		setStartId(start);
-		setEndId(end);
-		setDuplex(IsDuplex);
-		for(int i=0;i<channelNumber;i++)
-		{
-			forwardChannel.add(new Channel(start,end,Length,Speed,id));//添加正向车道
-		}
-		if(IsDuplex)
-		{
-			for(int i=0;i<channelNumber;i++)
-			{
-				reverseChannel.add(new Channel(end,start,Length,Speed,id));//添加逆向车道
-			}
-		}
-		
 	}
 }

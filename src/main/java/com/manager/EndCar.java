@@ -11,7 +11,7 @@ public class EndCar {
 		Main.endCarsNumber++; 
 		Main.nowOnRoadCars--;//在路上的车减一
 		Main.nowOnRoadCarId.remove(car.getId());
-		car.endTime=Main.NOWTIME;
-		//Main.sumTime+=car.endTime-car.getStartTime();
+		car.setEndTime(Main.NOWTIME);
+		Main.sumTime+=car.getEndTime()-car.getStartTime();
 	}
 }
