@@ -1,0 +1,396 @@
+21:41:30 main INFO com.huawei.Main.main(81) Start write output file
+21:41:30 main INFO com.huawei.Main.main(82) 总时间:1842
+21:42:18 main INFO com.huawei.Main.main(51) Start...
+21:42:18 main INFO com.huawei.Main.main(52) carPath = config/car.txt roadPath = config/road.txt crossPath = config/cross.txt and answerPath = config/answer.txt
+21:42:18 main INFO com.huawei.Main.main(55) start read input files
+21:44:31 main INFO com.huawei.Main.main(81) Start write output file
+21:44:31 main INFO com.huawei.Main.main(82) 总时间:1569
+21:45:10 main INFO com.huawei.Main.main(51) Start...
+21:45:10 main INFO com.huawei.Main.main(52) carPath = config/car.txt roadPath = config/road.txt crossPath = config/cross.txt and answerPath = config/answer.txt
+21:45:10 main INFO com.huawei.Main.main(55) start read input files
+21:47:44 main INFO com.huawei.Main.main(81) Start write output file
+21:47:44 main INFO com.huawei.Main.main(82) 总时间:1479
+08:52:01 main INFO com.huawei.Main.main(51) Start...
+08:52:01 main INFO com.huawei.Main.main(52) carPath = config/car.txt roadPath = config/road.txt crossPath = config/cross.txt and answerPath = config/answer.txt
+08:52:01 main INFO com.huawei.Main.main(55) start read input files
+08:52:20 main INFO com.huawei.Main.main(51) Start...
+08:52:20 main INFO com.huawei.Main.main(52) carPath = config/car.txt roadPath = config/road.txt crossPath = config/cross.txt and answerPath = config/answer.txt
+08:52:20 main INFO com.huawei.Main.main(55) start read input files
+08:52:33 main INFO com.huawei.Main.main(81) Start write output file
+08:52:33 main INFO com.huawei.Main.main(82) 总时间:439
+08:52:51 main INFO com.huawei.Main.main(51) Start...
+08:52:51 main INFO com.huawei.Main.main(52) carPath = config/car.txt roadPath = config/road.txt crossPath = config/cross.txt and answerPath = config/answer.txt
+08:52:51 main INFO com.huawei.Main.main(55) start read input files
+08:53:01 main INFO com.huawei.Main.main(81) Start write output file
+08:53:01 main INFO com.huawei.Main.main(82) 总时间:429
+08:59:31 main INFO com.huawei.Main.main(51) Start...
+08:59:31 main INFO com.huawei.Main.main(52) carPath = config/car.txt roadPath = config/road.txt crossPath = config/cross.txt and answerPath = config/answer.txt
+08:59:31 main INFO com.huawei.Main.main(55) start read input files
+09:00:35 main INFO com.huawei.Main.main(51) Start...
+09:00:35 main INFO com.huawei.Main.main(52) carPath = config/car.txt roadPath = config/road.txt crossPath = config/cross.txt and answerPath = config/answer.txt
+09:00:35 main INFO com.huawei.Main.main(55) start read input files
+09:02:18 main INFO com.huawei.Main.main(51) Start...
+09:02:18 main INFO com.huawei.Main.main(52) carPath = config/car.txt roadPath = config/road.txt crossPath = config/cross.txt and answerPath = config/answer.txt
+09:02:18 main INFO com.huawei.Main.main(55) start read input files
+09:17:51 main INFO com.huawei.Main.main(52) Start...
+09:17:51 main INFO com.huawei.Main.main(53) carPath = config/car.txt roadPath = config/road.txt crossPath = config/cross.txt and answerPath = config/answer.txt
+09:17:51 main INFO com.huawei.Main.main(56) start read input files
+09:19:31 main INFO com.huawei.Main.main(52) Start...
+09:19:31 main INFO com.huawei.Main.main(53) carPath = config/car.txt roadPath = config/road.txt crossPath = config/cross.txt and answerPath = config/answer.txt
+09:19:31 main INFO com.huawei.Main.main(56) start read input files
+09:20:32 main INFO com.huawei.Main.main(52) Start...
+09:20:32 main INFO com.huawei.Main.main(53) carPath = config/car.txt roadPath = config/road.txt crossPath = config/cross.txt and answerPath = config/answer.txt
+09:20:32 main INFO com.huawei.Main.main(56) start read input files
+09:20:47 main INFO com.huawei.Main.main(52) Start...
+09:20:47 main INFO com.huawei.Main.main(53) carPath = config/car.txt roadPath = config/road.txt crossPath = config/cross.txt and answerPath = config/answer.txt
+09:20:47 main INFO com.huawei.Main.main(56) start read input files
+09:21:00 main INFO com.huawei.Main.main(52) Start...
+09:21:00 main INFO com.huawei.Main.main(53) carPath = config/car.txt roadPath = config/road.txt crossPath = config/cross.txt and answerPath = config/answer.txt
+09:21:00 main INFO com.huawei.Main.main(56) start read input files
+09:21:13 main INFO com.huawei.Main.main(82) Start write output file
+09:21:13 main INFO com.huawei.Main.main(83) 总时间:439
+09:21:31 main INFO com.huawei.Main.main(52) Start...
+09:21:31 main INFO com.huawei.Main.main(53) carPath = config/car.txt roadPath = config/road.txt crossPath = config/cross.txt and answerPath = config/answer.txt
+09:21:31 main INFO com.huawei.Main.main(56) start read input files
+09:21:42 main INFO com.huawei.Main.main(82) Start write output file
+09:21:42 main INFO com.huawei.Main.main(83) 总时间:429
+09:21:53 main INFO com.huawei.Main.main(52) Start...
+09:21:53 main INFO com.huawei.Main.main(53) carPath = config/car.txt roadPath = config/road.txt crossPath = config/cross.txt and answerPath = config/answer.txt
+09:21:53 main INFO com.huawei.Main.main(56) start read input files
+09:22:23 main INFO com.huawei.Main.main(52) Start...
+09:22:23 main INFO com.huawei.Main.main(53) carPath = config/car.txt roadPath = config/road.txt crossPath = config/cross.txt and answerPath = config/answer.txt
+09:22:23 main INFO com.huawei.Main.main(56) start read input files
+09:22:55 main INFO com.huawei.Main.main(52) Start...
+09:22:55 main INFO com.huawei.Main.main(53) carPath = config/car.txt roadPath = config/road.txt crossPath = config/cross.txt and answerPath = config/answer.txt
+09:22:55 main INFO com.huawei.Main.main(56) start read input files
+09:30:02 main INFO com.huawei.Main.main(82) Start write output file
+09:30:02 main INFO com.huawei.Main.main(83) 总时间:1868
+09:30:26 main INFO com.huawei.Main.main(52) Start...
+09:30:26 main INFO com.huawei.Main.main(53) carPath = config/car.txt roadPath = config/road.txt crossPath = config/cross.txt and answerPath = config/answer.txt
+09:30:26 main INFO com.huawei.Main.main(56) start read input files
+09:38:45 main INFO com.huawei.Main.main(52) Start...
+09:38:45 main INFO com.huawei.Main.main(53) carPath = config/car.txt roadPath = config/road.txt crossPath = config/cross.txt and answerPath = config/answer.txt
+09:38:45 main INFO com.huawei.Main.main(56) start read input files
+09:39:06 main INFO com.huawei.Main.main(52) Start...
+09:39:06 main INFO com.huawei.Main.main(53) carPath = config/car.txt roadPath = config/road.txt crossPath = config/cross.txt and answerPath = config/answer.txt
+09:39:06 main INFO com.huawei.Main.main(56) start read input files
+09:46:45 main INFO com.huawei.Main.main(82) Start write output file
+09:46:45 main INFO com.huawei.Main.main(83) 总时间:1692
+09:47:05 main INFO com.huawei.Main.main(52) Start...
+09:47:05 main INFO com.huawei.Main.main(53) carPath = config/car.txt roadPath = config/road.txt crossPath = config/cross.txt and answerPath = config/answer.txt
+09:47:05 main INFO com.huawei.Main.main(56) start read input files
+09:56:53 main INFO com.huawei.Main.main(82) Start write output file
+09:56:53 main INFO com.huawei.Main.main(83) 总时间:1614
+09:58:49 main INFO com.huawei.Main.main(52) Start...
+09:58:49 main INFO com.huawei.Main.main(53) carPath = config/car.txt roadPath = config/road.txt crossPath = config/cross.txt and answerPath = config/answer.txt
+09:58:49 main INFO com.huawei.Main.main(56) start read input files
+09:58:56 main INFO com.huawei.Main.main(52) Start...
+09:58:56 main INFO com.huawei.Main.main(53) carPath = config/car.txt roadPath = config/road.txt crossPath = config/cross.txt and answerPath = config/answer.txt
+09:58:56 main INFO com.huawei.Main.main(56) start read input files
+10:09:55 main INFO com.huawei.Main.main(87) Start write output file
+10:09:56 main INFO com.huawei.Main.main(91) 总时间:659.971s
+10:15:26 main INFO com.huawei.Main.main(52) Start...
+10:15:26 main INFO com.huawei.Main.main(53) carPath = config/car.txt roadPath = config/road.txt crossPath = config/cross.txt and answerPath = config/answer.txt
+10:15:26 main INFO com.huawei.Main.main(56) start read input files
+10:25:16 main INFO com.huawei.Main.main(87) Start write output file
+10:25:16 main INFO com.huawei.Main.main(91) 总时间:590.424s
+10:30:21 main INFO com.huawei.Main.main(52) Start...
+10:30:21 main INFO com.huawei.Main.main(53) carPath = config/car.txt roadPath = config/road.txt crossPath = config/cross.txt and answerPath = config/answer.txt
+10:30:21 main INFO com.huawei.Main.main(56) start read input files
+10:34:40 main INFO com.huawei.Main.main(52) Start...
+10:34:40 main INFO com.huawei.Main.main(53) carPath = config/car.txt roadPath = config/road.txt crossPath = config/cross.txt and answerPath = config/answer.txt
+10:34:40 main INFO com.huawei.Main.main(56) start read input files
+10:42:06 main INFO com.huawei.Main.main(87) Start write output file
+10:42:07 main INFO com.huawei.Main.main(91) 总时间:446.903s
+10:45:06 main INFO com.huawei.Main.main(52) Start...
+10:45:06 main INFO com.huawei.Main.main(53) carPath = config/car.txt roadPath = config/road.txt crossPath = config/cross.txt and answerPath = config/answer.txt
+10:45:06 main INFO com.huawei.Main.main(56) start read input files
+10:47:43 main INFO com.huawei.Main.main(52) Start...
+10:47:43 main INFO com.huawei.Main.main(53) carPath = config/car.txt roadPath = config/road.txt crossPath = config/cross.txt and answerPath = config/answer.txt
+10:47:43 main INFO com.huawei.Main.main(56) start read input files
+10:56:05 main INFO com.huawei.Main.main(52) Start...
+10:56:05 main INFO com.huawei.Main.main(53) carPath = config/car.txt roadPath = config/road.txt crossPath = config/cross.txt and answerPath = config/answer.txt
+10:56:05 main INFO com.huawei.Main.main(56) start read input files
+11:03:39 main INFO com.huawei.Main.main(52) Start...
+11:03:39 main INFO com.huawei.Main.main(53) carPath = config/car.txt roadPath = config/road.txt crossPath = config/cross.txt and answerPath = config/answer.txt
+11:03:39 main INFO com.huawei.Main.main(56) start read input files
+11:12:57 main INFO com.huawei.Main.main(52) Start...
+11:12:57 main INFO com.huawei.Main.main(53) carPath = config/car.txt roadPath = config/road.txt crossPath = config/cross.txt and answerPath = config/answer.txt
+11:12:57 main INFO com.huawei.Main.main(56) start read input files
+11:14:36 main INFO com.huawei.Main.main(89) Start write output file
+11:14:36 main INFO com.huawei.Main.main(93) 总时间:99.279s
+11:15:57 main INFO com.huawei.Main.main(52) Start...
+11:15:57 main INFO com.huawei.Main.main(53) carPath = config/car.txt roadPath = config/road.txt crossPath = config/cross.txt and answerPath = config/answer.txt
+11:15:57 main INFO com.huawei.Main.main(56) start read input files
+11:18:47 main INFO com.huawei.Main.main(89) Start write output file
+11:18:47 main INFO com.huawei.Main.main(93) 总时间:170.149s
+11:19:16 main INFO com.huawei.Main.main(52) Start...
+11:19:16 main INFO com.huawei.Main.main(53) carPath = config/car.txt roadPath = config/road.txt crossPath = config/cross.txt and answerPath = config/answer.txt
+11:19:16 main INFO com.huawei.Main.main(56) start read input files
+11:21:12 main INFO com.huawei.Main.main(89) Start write output file
+11:21:12 main INFO com.huawei.Main.main(93) 总时间:116.115s
+11:23:20 main INFO com.huawei.Main.main(52) Start...
+11:23:20 main INFO com.huawei.Main.main(53) carPath = config/car.txt roadPath = config/road.txt crossPath = config/cross.txt and answerPath = config/answer.txt
+11:23:20 main INFO com.huawei.Main.main(56) start read input files
+11:25:22 main INFO com.huawei.Main.main(96) Start write output file
+11:25:22 main INFO com.huawei.Main.main(100) 总时间:121.546s
+11:28:43 main INFO com.huawei.Main.main(52) Start...
+11:28:43 main INFO com.huawei.Main.main(53) carPath = config/car.txt roadPath = config/road.txt crossPath = config/cross.txt and answerPath = config/answer.txt
+11:28:43 main INFO com.huawei.Main.main(56) start read input files
+11:32:32 main INFO com.huawei.Main.main(52) Start...
+11:32:32 main INFO com.huawei.Main.main(53) carPath = config/car.txt roadPath = config/road.txt crossPath = config/cross.txt and answerPath = config/answer.txt
+11:32:32 main INFO com.huawei.Main.main(56) start read input files
+11:34:22 main INFO com.huawei.Main.main(96) Start write output file
+11:34:23 main INFO com.huawei.Main.main(100) 总时间:110.887s
+11:35:33 main INFO com.huawei.Main.main(52) Start...
+11:35:33 main INFO com.huawei.Main.main(53) carPath = config/car.txt roadPath = config/road.txt crossPath = config/cross.txt and answerPath = config/answer.txt
+11:35:33 main INFO com.huawei.Main.main(56) start read input files
+11:37:32 main INFO com.huawei.Main.main(96) Start write output file
+11:37:32 main INFO com.huawei.Main.main(100) 总时间:119.124s
+11:39:49 main INFO com.huawei.Main.main(52) Start...
+11:39:49 main INFO com.huawei.Main.main(53) carPath = config/car.txt roadPath = config/road.txt crossPath = config/cross.txt and answerPath = config/answer.txt
+11:39:49 main INFO com.huawei.Main.main(56) start read input files
+11:41:54 main INFO com.huawei.Main.main(96) Start write output file
+11:41:54 main INFO com.huawei.Main.main(100) 总时间:124.799s
+11:45:14 main INFO com.huawei.Main.main(52) Start...
+11:45:14 main INFO com.huawei.Main.main(53) carPath = config/car.txt roadPath = config/road.txt crossPath = config/cross.txt and answerPath = config/answer.txt
+11:45:14 main INFO com.huawei.Main.main(56) start read input files
+11:50:47 main INFO com.huawei.Main.main(96) Start write output file
+11:50:48 main INFO com.huawei.Main.main(100) 总时间:333.715s
+11:52:01 main INFO com.huawei.Main.main(52) Start...
+11:52:01 main INFO com.huawei.Main.main(53) carPath = config/car.txt roadPath = config/road.txt crossPath = config/cross.txt and answerPath = config/answer.txt
+11:52:01 main INFO com.huawei.Main.main(56) start read input files
+11:58:04 main INFO com.huawei.Main.main(96) Start write output file
+11:58:05 main INFO com.huawei.Main.main(100) 总时间:364.046s
+12:07:47 main INFO com.huawei.Main.main(53) Start...
+12:07:47 main INFO com.huawei.Main.main(54) carPath = config/car.txt roadPath = config/road.txt crossPath = config/cross.txt and answerPath = config/answer.txt
+12:07:47 main INFO com.huawei.Main.main(57) start read input files
+12:14:21 main INFO com.huawei.Main.main(99) Start write output file
+12:14:21 main INFO com.huawei.Main.main(103) 总时间:393.501s
+12:16:31 main INFO com.huawei.Main.main(53) Start...
+12:16:31 main INFO com.huawei.Main.main(54) carPath = config/car.txt roadPath = config/road.txt crossPath = config/cross.txt and answerPath = config/answer.txt
+12:16:31 main INFO com.huawei.Main.main(57) start read input files
+12:23:31 main INFO com.huawei.Main.main(53) Start...
+12:23:31 main INFO com.huawei.Main.main(54) carPath = config/car.txt roadPath = config/road.txt crossPath = config/cross.txt and answerPath = config/answer.txt
+12:23:31 main INFO com.huawei.Main.main(57) start read input files
+12:31:50 main INFO com.huawei.Main.main(53) Start...
+12:31:50 main INFO com.huawei.Main.main(54) carPath = config/car.txt roadPath = config/road.txt crossPath = config/cross.txt and answerPath = config/answer.txt
+12:31:50 main INFO com.huawei.Main.main(57) start read input files
+12:32:19 main INFO com.huawei.Main.main(53) Start...
+12:32:19 main INFO com.huawei.Main.main(54) carPath = config/car.txt roadPath = config/road.txt crossPath = config/cross.txt and answerPath = config/answer.txt
+12:32:19 main INFO com.huawei.Main.main(57) start read input files
+12:35:11 main INFO com.huawei.Main.main(99) Start write output file
+12:35:11 main INFO com.huawei.Main.main(103) 总时间:172.248s
+12:42:52 main INFO com.huawei.Main.main(53) Start...
+12:42:52 main INFO com.huawei.Main.main(54) carPath = config/car.txt roadPath = config/road.txt crossPath = config/cross.txt and answerPath = config/answer.txt
+12:42:52 main INFO com.huawei.Main.main(57) start read input files
+12:45:43 main INFO com.huawei.Main.main(99) Start write output file
+12:45:43 main INFO com.huawei.Main.main(103) 总时间:171.414s
+12:46:07 main INFO com.huawei.Main.main(53) Start...
+12:46:07 main INFO com.huawei.Main.main(54) carPath = config/car.txt roadPath = config/road.txt crossPath = config/cross.txt and answerPath = config/answer.txt
+12:46:07 main INFO com.huawei.Main.main(57) start read input files
+12:49:04 main INFO com.huawei.Main.main(99) Start write output file
+12:49:04 main INFO com.huawei.Main.main(103) 总时间:176.648s
+12:56:54 main INFO com.huawei.Main.main(53) Start...
+12:56:54 main INFO com.huawei.Main.main(54) carPath = config/car.txt roadPath = config/road.txt crossPath = config/cross.txt and answerPath = config/answer.txt
+12:56:54 main INFO com.huawei.Main.main(57) start read input files
+13:06:11 main INFO com.huawei.Main.main(99) Start write output file
+13:06:11 main INFO com.huawei.Main.main(103) 总时间:557.032s
+13:06:30 main INFO com.huawei.Main.main(53) Start...
+13:06:30 main INFO com.huawei.Main.main(54) carPath = config/car.txt roadPath = config/road.txt crossPath = config/cross.txt and answerPath = config/answer.txt
+13:06:30 main INFO com.huawei.Main.main(57) start read input files
+13:17:09 main INFO com.huawei.Main.main(99) Start write output file
+13:17:09 main INFO com.huawei.Main.main(103) 总时间:639.113s
+13:19:31 main INFO com.huawei.Main.main(53) Start...
+13:19:31 main INFO com.huawei.Main.main(54) carPath = config/car.txt roadPath = config/road.txt crossPath = config/cross.txt and answerPath = config/answer.txt
+13:19:31 main INFO com.huawei.Main.main(57) start read input files
+13:26:58 main INFO com.huawei.Main.main(99) Start write output file
+13:26:58 main INFO com.huawei.Main.main(103) 总时间:447.69s
+13:27:43 main INFO com.huawei.Main.main(53) Start...
+13:27:43 main INFO com.huawei.Main.main(54) carPath = config/car.txt roadPath = config/road.txt crossPath = config/cross.txt and answerPath = config/answer.txt
+13:27:43 main INFO com.huawei.Main.main(57) start read input files
+13:30:05 main INFO com.huawei.Main.main(99) Start write output file
+13:30:06 main INFO com.huawei.Main.main(103) 总时间:143.128s
+13:31:05 main INFO com.huawei.Main.main(53) Start...
+13:31:05 main INFO com.huawei.Main.main(54) carPath = config/car.txt roadPath = config/road.txt crossPath = config/cross.txt and answerPath = config/answer.txt
+13:31:05 main INFO com.huawei.Main.main(57) start read input files
+13:32:53 main INFO com.huawei.Main.main(99) Start write output file
+13:32:54 main INFO com.huawei.Main.main(103) 总时间:108.899s
+13:35:19 main INFO com.huawei.Main.main(53) Start...
+13:35:19 main INFO com.huawei.Main.main(54) carPath = config/car.txt roadPath = config/road.txt crossPath = config/cross.txt and answerPath = config/answer.txt
+13:35:19 main INFO com.huawei.Main.main(57) start read input files
+13:38:19 main INFO com.huawei.Main.main(99) Start write output file
+13:38:20 main INFO com.huawei.Main.main(103) 总时间:180.393s
+13:44:50 main INFO com.huawei.Main.main(53) Start...
+13:44:50 main INFO com.huawei.Main.main(54) carPath = config/car.txt roadPath = config/road.txt crossPath = config/cross.txt and answerPath = config/answer.txt
+13:44:50 main INFO com.huawei.Main.main(57) start read input files
+13:45:06 main INFO com.huawei.Main.main(53) Start...
+13:45:06 main INFO com.huawei.Main.main(54) carPath = config/car.txt roadPath = config/road.txt crossPath = config/cross.txt and answerPath = config/answer.txt
+13:45:06 main INFO com.huawei.Main.main(57) start read input files
+13:53:31 main INFO com.huawei.Main.main(99) Start write output file
+13:53:31 main INFO com.huawei.Main.main(103) 总时间:505.349s
+13:56:57 main INFO com.huawei.Main.main(53) Start...
+13:56:57 main INFO com.huawei.Main.main(54) carPath = config/car.txt roadPath = config/road.txt crossPath = config/cross.txt and answerPath = config/answer.txt
+13:56:57 main INFO com.huawei.Main.main(57) start read input files
+13:58:25 main INFO com.huawei.Main.main(99) Start write output file
+13:58:25 main INFO com.huawei.Main.main(103) 总时间:87.693s
+13:58:39 main INFO com.huawei.Main.main(53) Start...
+13:58:39 main INFO com.huawei.Main.main(54) carPath = config/car.txt roadPath = config/road.txt crossPath = config/cross.txt and answerPath = config/answer.txt
+13:58:39 main INFO com.huawei.Main.main(57) start read input files
+14:01:44 main INFO com.huawei.Main.main(99) Start write output file
+14:01:44 main INFO com.huawei.Main.main(103) 总时间:185.332s
+14:09:25 main INFO com.huawei.Main.main(53) Start...
+14:09:25 main INFO com.huawei.Main.main(54) carPath = config/car.txt roadPath = config/road.txt crossPath = config/cross.txt and answerPath = config/answer.txt
+14:09:25 main INFO com.huawei.Main.main(57) start read input files
+14:12:22 main INFO com.huawei.Main.main(99) Start write output file
+14:12:22 main INFO com.huawei.Main.main(103) 总时间:177.034s
+14:18:14 main INFO com.huawei.Main.main(53) Start...
+14:18:14 main INFO com.huawei.Main.main(54) carPath = config/car.txt roadPath = config/road.txt crossPath = config/cross.txt and answerPath = config/answer.txt
+14:18:14 main INFO com.huawei.Main.main(57) start read input files
+14:20:18 main INFO com.huawei.Main.main(99) Start write output file
+14:20:19 main INFO com.huawei.Main.main(103) 总时间:124.756s
+14:22:10 main INFO com.huawei.Main.main(53) Start...
+14:22:10 main INFO com.huawei.Main.main(54) carPath = config/car.txt roadPath = config/road.txt crossPath = config/cross.txt and answerPath = config/answer.txt
+14:22:10 main INFO com.huawei.Main.main(57) start read input files
+14:24:08 main INFO com.huawei.Main.main(99) Start write output file
+14:24:09 main INFO com.huawei.Main.main(103) 总时间:118.288s
+14:28:16 main INFO com.huawei.Main.main(53) Start...
+14:28:16 main INFO com.huawei.Main.main(54) carPath = config/car.txt roadPath = config/road.txt crossPath = config/cross.txt and answerPath = config/answer.txt
+14:28:16 main INFO com.huawei.Main.main(57) start read input files
+14:31:02 main INFO com.huawei.Main.main(53) Start...
+14:31:02 main INFO com.huawei.Main.main(54) carPath = config/car.txt roadPath = config/road.txt crossPath = config/cross.txt and answerPath = config/answer.txt
+14:31:02 main INFO com.huawei.Main.main(57) start read input files
+14:31:23 main INFO com.huawei.Main.main(99) Start write output file
+14:31:23 main INFO com.huawei.Main.main(103) 总时间:187.174s
+14:32:59 main INFO com.huawei.Main.main(99) Start write output file
+14:32:59 main INFO com.huawei.Main.main(103) 总时间:117.137s
+14:34:05 main INFO com.huawei.Main.main(53) Start...
+14:34:05 main INFO com.huawei.Main.main(54) carPath = config/car.txt roadPath = config/road.txt crossPath = config/cross.txt and answerPath = config/answer.txt
+14:34:05 main INFO com.huawei.Main.main(57) start read input files
+14:36:05 main INFO com.huawei.Main.main(99) Start write output file
+14:36:06 main INFO com.huawei.Main.main(103) 总时间:120.947s
+14:36:27 main INFO com.huawei.Main.main(53) Start...
+14:36:27 main INFO com.huawei.Main.main(54) carPath = config/car.txt roadPath = config/road.txt crossPath = config/cross.txt and answerPath = config/answer.txt
+14:36:27 main INFO com.huawei.Main.main(57) start read input files
+14:38:11 main INFO com.huawei.Main.main(99) Start write output file
+14:38:11 main INFO com.huawei.Main.main(103) 总时间:103.907s
+14:39:20 main INFO com.huawei.Main.main(53) Start...
+14:39:20 main INFO com.huawei.Main.main(54) carPath = config/car.txt roadPath = config/road.txt crossPath = config/cross.txt and answerPath = config/answer.txt
+14:39:20 main INFO com.huawei.Main.main(57) start read input files
+14:39:33 main INFO com.huawei.Main.main(53) Start...
+14:39:33 main INFO com.huawei.Main.main(54) carPath = config/car.txt roadPath = config/road.txt crossPath = config/cross.txt and answerPath = config/answer.txt
+14:39:33 main INFO com.huawei.Main.main(57) start read input files
+14:42:38 main INFO com.huawei.Main.main(99) Start write output file
+14:42:38 main INFO com.huawei.Main.main(103) 总时间:184.635s
+14:45:20 main INFO com.huawei.Main.main(53) Start...
+14:45:20 main INFO com.huawei.Main.main(54) carPath = config/car.txt roadPath = config/road.txt crossPath = config/cross.txt and answerPath = config/answer.txt
+14:45:20 main INFO com.huawei.Main.main(57) start read input files
+14:47:17 main INFO com.huawei.Main.main(99) Start write output file
+14:47:18 main INFO com.huawei.Main.main(103) 总时间:117.792s
+14:50:07 main INFO com.huawei.Main.main(53) Start...
+14:50:07 main INFO com.huawei.Main.main(54) carPath = config/car.txt roadPath = config/road.txt crossPath = config/cross.txt and answerPath = config/answer.txt
+14:50:07 main INFO com.huawei.Main.main(57) start read input files
+14:50:20 main INFO com.huawei.Main.main(53) Start...
+14:50:20 main INFO com.huawei.Main.main(54) carPath = config/car.txt roadPath = config/road.txt crossPath = config/cross.txt and answerPath = config/answer.txt
+14:50:20 main INFO com.huawei.Main.main(57) start read input files
+14:53:12 main INFO com.huawei.Main.main(99) Start write output file
+14:53:13 main INFO com.huawei.Main.main(103) 总时间:173.018s
+14:59:38 main INFO com.huawei.Main.main(53) Start...
+14:59:38 main INFO com.huawei.Main.main(54) carPath = config/car.txt roadPath = config/road.txt crossPath = config/cross.txt and answerPath = config/answer.txt
+14:59:38 main INFO com.huawei.Main.main(57) start read input files
+15:02:34 main INFO com.huawei.Main.main(99) Start write output file
+15:02:35 main INFO com.huawei.Main.main(103) 总时间:176.111s
+15:02:42 main INFO com.huawei.Main.main(53) Start...
+15:02:42 main INFO com.huawei.Main.main(54) carPath = config/car.txt roadPath = config/road.txt crossPath = config/cross.txt and answerPath = config/answer.txt
+15:02:42 main INFO com.huawei.Main.main(57) start read input files
+15:05:48 main INFO com.huawei.Main.main(99) Start write output file
+15:05:49 main INFO com.huawei.Main.main(103) 总时间:187.163s
+15:08:25 main INFO com.huawei.Main.main(53) Start...
+15:08:25 main INFO com.huawei.Main.main(54) carPath = config/car.txt roadPath = config/road.txt crossPath = config/cross.txt and answerPath = config/answer.txt
+15:08:25 main INFO com.huawei.Main.main(57) start read input files
+15:08:37 main INFO com.huawei.Main.main(53) Start...
+15:08:37 main INFO com.huawei.Main.main(54) carPath = config/car.txt roadPath = config/road.txt crossPath = config/cross.txt and answerPath = config/answer.txt
+15:08:37 main INFO com.huawei.Main.main(57) start read input files
+15:10:30 main INFO com.huawei.Main.main(99) Start write output file
+15:10:30 main INFO com.huawei.Main.main(103) 总时间:113.203s
+15:13:09 main INFO com.huawei.Main.main(53) Start...
+15:13:09 main INFO com.huawei.Main.main(54) carPath = config/car.txt roadPath = config/road.txt crossPath = config/cross.txt and answerPath = config/answer.txt
+15:13:09 main INFO com.huawei.Main.main(57) start read input files
+15:14:54 main INFO com.huawei.Main.main(99) Start write output file
+15:16:05 main INFO com.huawei.Main.main(53) Start...
+15:16:05 main INFO com.huawei.Main.main(54) carPath = config/car.txt roadPath = config/road.txt crossPath = config/cross.txt and answerPath = config/answer.txt
+15:16:05 main INFO com.huawei.Main.main(57) start read input files
+15:18:31 main INFO com.huawei.Main.main(99) Start write output file
+15:18:34 main INFO com.huawei.Main.main(53) Start...
+15:18:34 main INFO com.huawei.Main.main(54) carPath = config/car.txt roadPath = config/road.txt crossPath = config/cross.txt and answerPath = config/answer.txt
+15:18:34 main INFO com.huawei.Main.main(57) start read input files
+15:20:33 main INFO com.huawei.Main.main(53) Start...
+15:20:33 main INFO com.huawei.Main.main(54) carPath = config/car.txt roadPath = config/road.txt crossPath = config/cross.txt and answerPath = config/answer.txt
+15:20:33 main INFO com.huawei.Main.main(57) start read input files
+15:23:53 main INFO com.huawei.Main.main(53) Start...
+15:23:53 main INFO com.huawei.Main.main(54) carPath = config/car.txt roadPath = config/road.txt crossPath = config/cross.txt and answerPath = config/answer.txt
+15:23:53 main INFO com.huawei.Main.main(57) start read input files
+15:31:25 main INFO com.huawei.Main.main(53) Start...
+15:31:25 main INFO com.huawei.Main.main(54) carPath = config/car.txt roadPath = config/road.txt crossPath = config/cross.txt and answerPath = config/answer.txt
+15:31:25 main INFO com.huawei.Main.main(57) start read input files
+15:33:15 main INFO com.huawei.Main.main(99) Start write output file
+15:34:59 main INFO com.huawei.Main.main(53) Start...
+15:34:59 main INFO com.huawei.Main.main(54) carPath = config/car.txt roadPath = config/road.txt crossPath = config/cross.txt and answerPath = config/answer.txt
+15:34:59 main INFO com.huawei.Main.main(57) start read input files
+15:37:00 main INFO com.huawei.Main.main(99) Start write output file
+15:39:18 main INFO com.huawei.Main.main(53) Start...
+15:39:18 main INFO com.huawei.Main.main(54) carPath = config/car.txt roadPath = config/road.txt crossPath = config/cross.txt and answerPath = config/answer.txt
+15:39:18 main INFO com.huawei.Main.main(57) start read input files
+15:41:09 main INFO com.huawei.Main.main(99) Start write output file
+15:42:07 main INFO com.huawei.Main.main(53) Start...
+15:42:07 main INFO com.huawei.Main.main(54) carPath = config/car.txt roadPath = config/road.txt crossPath = config/cross.txt and answerPath = config/answer.txt
+15:42:07 main INFO com.huawei.Main.main(57) start read input files
+15:43:57 main INFO com.huawei.Main.main(99) Start write output file
+15:44:06 main INFO com.huawei.Main.main(53) Start...
+15:44:06 main INFO com.huawei.Main.main(54) carPath = config/car.txt roadPath = config/road.txt crossPath = config/cross.txt and answerPath = config/answer.txt
+15:44:06 main INFO com.huawei.Main.main(57) start read input files
+15:46:25 main INFO com.huawei.Main.main(99) Start write output file
+15:46:33 main INFO com.huawei.Main.main(53) Start...
+15:46:33 main INFO com.huawei.Main.main(54) carPath = config/car.txt roadPath = config/road.txt crossPath = config/cross.txt and answerPath = config/answer.txt
+15:46:33 main INFO com.huawei.Main.main(57) start read input files
+15:47:17 main INFO com.huawei.Main.main(53) Start...
+15:47:17 main INFO com.huawei.Main.main(54) carPath = config/car.txt roadPath = config/road.txt crossPath = config/cross.txt and answerPath = config/answer.txt
+15:47:17 main INFO com.huawei.Main.main(57) start read input files
+15:49:24 main INFO com.huawei.Main.main(99) Start write output file
+15:50:39 main INFO com.huawei.Main.main(53) Start...
+15:50:39 main INFO com.huawei.Main.main(54) carPath = config/car.txt roadPath = config/road.txt crossPath = config/cross.txt and answerPath = config/answer.txt
+15:50:39 main INFO com.huawei.Main.main(57) start read input files
+15:52:36 main INFO com.huawei.Main.main(99) Start write output file
+15:53:46 main INFO com.huawei.Main.main(53) Start...
+15:53:46 main INFO com.huawei.Main.main(54) carPath = config/car.txt roadPath = config/road.txt crossPath = config/cross.txt and answerPath = config/answer.txt
+15:53:46 main INFO com.huawei.Main.main(57) start read input files
+15:55:40 main INFO com.huawei.Main.main(99) Start write output file
+15:57:36 main INFO com.huawei.Main.main(53) Start...
+15:57:36 main INFO com.huawei.Main.main(54) carPath = config/car.txt roadPath = config/road.txt crossPath = config/cross.txt and answerPath = config/answer.txt
+15:57:36 main INFO com.huawei.Main.main(57) start read input files
+15:59:39 main INFO com.huawei.Main.main(99) Start write output file
+15:59:56 main INFO com.huawei.Main.main(53) Start...
+15:59:56 main INFO com.huawei.Main.main(54) carPath = config/car.txt roadPath = config/road.txt crossPath = config/cross.txt and answerPath = config/answer.txt
+15:59:56 main INFO com.huawei.Main.main(57) start read input files
+16:02:17 main INFO com.huawei.Main.main(99) Start write output file
+16:06:00 main INFO com.huawei.Main.main(53) Start...
+16:06:00 main INFO com.huawei.Main.main(54) carPath = config/car.txt roadPath = config/road.txt crossPath = config/cross.txt and answerPath = config/answer.txt
+16:06:00 main INFO com.huawei.Main.main(57) start read input files
+16:08:35 main INFO com.huawei.Main.main(99) Start write output file
+16:10:08 main INFO com.huawei.Main.main(53) Start...
+16:10:08 main INFO com.huawei.Main.main(54) carPath = config/car.txt roadPath = config/road.txt crossPath = config/cross.txt and answerPath = config/answer.txt
+16:10:08 main INFO com.huawei.Main.main(57) start read input files
+16:12:13 main INFO com.huawei.Main.main(99) Start write output file
+16:12:44 main INFO com.huawei.Main.main(53) Start...
+16:12:44 main INFO com.huawei.Main.main(54) carPath = config/car.txt roadPath = config/road.txt crossPath = config/cross.txt and answerPath = config/answer.txt
+16:12:44 main INFO com.huawei.Main.main(57) start read input files
+16:15:19 main INFO com.huawei.Main.main(99) Start write output file
+16:18:04 main INFO com.huawei.Main.main(53) Start...
+16:18:04 main INFO com.huawei.Main.main(54) carPath = config/car.txt roadPath = config/road.txt crossPath = config/cross.txt and answerPath = config/answer.txt
+16:18:04 main INFO com.huawei.Main.main(57) start read input files
+16:20:22 main INFO com.huawei.Main.main(53) Start...
+16:20:22 main INFO com.huawei.Main.main(54) carPath = config/car.txt roadPath = config/road.txt crossPath = config/cross.txt and answerPath = config/answer.txt
+16:20:22 main INFO com.huawei.Main.main(57) start read input files
+16:22:39 main INFO com.huawei.Main.main(53) Start...
+16:22:39 main INFO com.huawei.Main.main(54) carPath = config/car.txt roadPath = config/road.txt crossPath = config/cross.txt and answerPath = config/answer.txt
+16:22:39 main INFO com.huawei.Main.main(57) start read input files

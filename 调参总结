@@ -1,0 +1,18 @@
+可以调的参数
+
+1. main文件的 发车数控制  if(nowOnRoadCars<roadID.size()*16)
+			StartCars.startNewCars();//新车上路
+
+2.Dijkstra文件的newGraph方法中的初始路径权重   三个参数的意义分别是 startVertex EndVertex  weight   即第三个参数是初始有向图的权重
+注意如果是双向路 需要把下面的也改一下
+g.addEdge(Integer.parseInt(road.getStartId())-1, Integer.parseInt(road.getEndId())-1, road.getLength()/road.getChannelNumber());
+if(road.getIsDuplex())
+g.addEdge(Integer.parseInt(road.getEndId())-1, Integer.parseInt(road.getStartId())-1, road.getLength()/road.getChannelNumber());
+
+3.Channel文件里的 addCar和removeCar 的weight
+
+4.startCar文件里的三个方案   还有下面的根据车道内的拥堵情况 判断是否发车的两个方法 
+
+调参有点玄学  有时候发生了锁死可能以为调低 if(nowOnRoadCars<roadID.size()*16)情况会好点  但是有些时候 调高参数反而不会死锁了   
+所以要都试一下 运行完之后 可以先用判题器跑一下   但是判题器也不一定是对的
+
