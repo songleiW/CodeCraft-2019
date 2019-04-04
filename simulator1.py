@@ -14,6 +14,7 @@ class CAR(object):
     def __init__(self,id_,from_,to_,speed_,planTime_):
         # **** statistic parameters ****#
         self.id_, self.from_, self.to_, self.speed_, self.planTime_ = id_, from_, to_, speed_, -1
+        # 随机颜色，用于可视化
         self.carColor = [int(value) for value in np.random.random_integers(0, 255, [3])]
         # **** dynamic parameters ****#
         self.state,self.x,self.y = 0,0,0
@@ -93,6 +94,8 @@ class CAR(object):
             return -1
 
 class ROAD(object):
+    # forwardBucket，backwardBucket 初始化时就固定下来，由道路决定
+    # provideBucket，receiveBucket是相对桶，用于cross在调度时，判断是进车道，还是出车道
     def __init__(self,id_, length_, speed_, channel_, from_, to_, isDuplex_):
         # **** statistic parameters ****#
         self.id_, self.length_, self.speed_, self.channel_, self.from_, self.to_, self.isDuplex_ = \
