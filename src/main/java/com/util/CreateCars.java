@@ -84,10 +84,11 @@ public class CreateCars {
 			//计算a b
 			double a=0,b=0;
 			a=(priorityId.size()+nonPriorityId.size())*0.05/priorityId.size();
+			a=Math.round(a*100000)/100000.0;//保留五位小数
 			a+=(maxSpeedAllCars/minSpeedAllCars)*0.2375/(priorityMaxSpeed/priorityMinSpeed);
 			a=Math.round(a*100000)/100000.0;//保留五位小数
 			a+=(latestPlanStartTimeAllCars/earlistPlanStartTimeAllCars)*0.2375/(priorityLatestPlanStartTime/priorityEarlistPlanStartTime);
-			a=Math.round(a*100000)/100000.0;//保留五位小数
+			a=Math.round(a*100000)/100000.0;//保留五位小数;
 			a+=startIdDistributionAllCars.size()*0.2375/prioritStartIdDistribution.size();
 			a=Math.round(a*100000)/100000.0;//保留五位小数
 			a+=endIdDistributionAllCars.size()*0.2375/prioritEndIdDistribution.size();

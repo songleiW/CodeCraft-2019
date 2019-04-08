@@ -31,11 +31,7 @@ public class StartCars {
 			{
 				continue;
 			}
-			if(car.isPriority()&&car.nextChannels==null)//优先车辆 一个周期内只获得一次方向 否则太卡
-			{
-				Dijkstra.getRoute(car);//函数内部判断是否是预置车辆
-			}
-			if(!car.isPriority())//非优先车辆
+			if(car.nextChannels==null)//一个周期内只获得一次方向
 			{
 				Dijkstra.getRoute(car);//函数内部判断是否是预置车辆
 			}
@@ -66,15 +62,11 @@ public class StartCars {
 				if(frontCar.nowLocation==1)//本车道第一位有车 
 				{
 					//本车是优先车辆 且前车已经行驶完毕 或 本车不是优先车辆 车道第一位有车  都需要遍历下一车道
-					if((car.isPriority()&&frontCar.isEndThisTime())||!car.isPriority())
-					{
-						continue;
-					}
-					//本车是优先车辆 且前车没有行驶完毕   就不发车  等待
-					if(car.isPriority()&&!frontCar.isEndThisTime())
+					if(!frontCar.isEndThisTime())
 					{
 						return false;
 					}
+					continue;
 				}
 				if(speed<frontCar.nowLocation||!car.isPriority())//不会和前车冲突或不是优先车辆
 				{

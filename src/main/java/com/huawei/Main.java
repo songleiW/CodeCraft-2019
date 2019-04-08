@@ -28,7 +28,7 @@ public class Main {
 	public static int NumberEndThisTime=0;		//记录结束这一周车的数目
 	public static int MaxNumberCarsOnRoad=0;		//超过这一阈值 将不会执行发车函数
 	public static double a,b;//计分系数
-	public static int Tpri,TE,TESum=0,Tsumpri=0,Tsum=0;
+	public static long Tpri,TE,TESum=0,Tsumpri=0,Tsum=0;
 	public static int priorityLatestEndTime=0;//优先车的最晚完成时间
 	public static ArrayList<String> nowOnRoadCarId=new ArrayList<String>();		//目前在路上的车的ID
 	//×××××××××××××××××各种ID便于获得对应的类×××××××××××××××××××××××××××××××××
@@ -48,7 +48,7 @@ public class Main {
 		//	logger.error("please input args: inputFilePath, resultFilePath");
 			return;
 		}
-		 String carPath = args[0];
+			String carPath = args[0];
 	        String roadPath = args[1];
 	        String crossPath = args[2];
 	        String presetAnswerPath = args[3];
@@ -66,7 +66,7 @@ public class Main {
 		//sortStartCars.sortCarsIdMap(nonPriorityCarsId);//非优先车排序
 		System.out.println("信息读取完成");
 		Dijkstra.newGraph();		//新建图
-		MaxNumberCarsOnRoad=roadID.size()*13;
+		MaxNumberCarsOnRoad=roadID.size()*14;
 		saveCarID.addAll(nonPriorityCarsId);
 		saveCarID.addAll(priorityCarsId);
 		//两个变量用于判断死否发生死锁 
@@ -94,9 +94,9 @@ public class Main {
 			//DisplayResult.visulization();//可视化准备函数
 		}
 		long endTime=System.currentTimeMillis();		 //获取结束时间
-		logger.info("总时间:"+(endTime-startTime)/1000.0+"s");
-		calculateScore();
 		System.out.println("程序运行时间： "+(endTime-startTime)/1000.0+"s");
+		calculateScore();
+		logger.info("总时间:"+(endTime-startTime)/1000.0+"s\n");
 		WriteAnswer.wtiteAnswer(answerPath);
 	}
 	public static void InitCarState() {
@@ -106,6 +106,18 @@ public class Main {
 		{
 			car=allCars.get(Id);
 			car.setStartThisTime();		//设置车都未结束这一周期
+			car.nextChannels=null;		//为车重新选取下一步需要走的方向
+			car.nextTurn=null;
+		}
+		for(String Id:priorityCarsId)
+		{
+			car=allCars.get(Id);
+			car.nextChannels=null;		//为车重新选取下一步需要走的方向
+			car.nextTurn=null;
+		}
+		for(String Id:nonPriorityCarsId)
+		{
+			car=allCars.get(Id);
 			car.nextChannels=null;		//为车重新选取下一步需要走的方向
 			car.nextTurn=null;
 		}
@@ -119,8 +131,8 @@ public class Main {
 	}
 	public static void calculateScore() {
 		Tpri=priorityLatestEndTime-CreateCars.priorityEarlistPlanStartTime;
-		TE=(int) Math.round(a*Tpri+NOWTIME);
-		TESum=(int) Math.round(b*Tsumpri+Tsum);
+		TE= Math.round(a*Tpri+NOWTIME);//四舍五入
+		TESum= Math.round(b*Tsumpri+Tsum);
 		System.out.println("最终调度时间:"+TE);
 		System.out.println("最终总调度时间:"+TESum);
 		logger.info("最终调度时间:"+TE);

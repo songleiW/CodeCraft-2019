@@ -15,7 +15,7 @@ public class EndCar {
 		Main.Tsum+=(car.getEndTime()-car.getPlanTime());
 		if(car.isPriority())
 		{
-			Main.priorityLatestEndTime=Math.max(Main.NOWTIME, Main.priorityLatestEndTime);
+			Main.priorityLatestEndTime=Main.NOWTIME;
 			Main.Tsumpri+=(car.getEndTime()-car.getPlanTime());
 		}
 	}

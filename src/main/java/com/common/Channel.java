@@ -9,19 +9,23 @@ import com.util.Dijkstra;
 public class Channel {
 	private String from;
 	private String to;
+	private String ID;
 	private int length;
 	public int nowCarsNumber=0;//当前有多少车在本车道上面
 	public int maxSpeed;//限速
 	public ArrayList<Car> carPortList=new ArrayList<Car>();//存放车的列表
 	public ArrayList<Car> historyPortList=new ArrayList<Car>();
 	public int historyNowCarsNumber;
-	public String ID;
 	public Channel(String From,String To,int Length,int MaxSpeed,String id) {//构造函数
 		this.from=From;
 		this.to=To;
 		this.length=Length;
 		this.maxSpeed=MaxSpeed;
 		ID=id;
+	}
+	public String getId()
+	{
+		return ID;
 	}
 	public void setFrom(String From) {
 		this.from=From;
@@ -64,6 +68,10 @@ public class Channel {
 	public void removeCar(Car car) {
 		int weight=nowCarsNumber;
 		nowCarsNumber--;
+		if(!car.getId().equals(carPortList.get(0).getId()))
+		{
+			System.exit(0);
+		}
 		carPortList.remove(0);
 		Dijkstra.g.updateEdge(from, to, -weight);
 	}

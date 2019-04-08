@@ -9,7 +9,6 @@ import com.huawei.Main;
 public class Station {
 	private String ID;
 	public ArrayList<String> toRoad=new ArrayList<String>();//路口通向的道路
-	public ArrayList<String> toStation=new ArrayList<String>();//路口通向的站点
 	private ArrayList<Integer> List=new ArrayList<Integer>();
 	public ArrayList<Road> roadList=new ArrayList<Road>();
 	public Station(String id,String Up,String Right,String Down,String Left )
@@ -63,9 +62,6 @@ public class Station {
 	
 	public String getId() {
 		return ID;
-	}
-	public String getToStation(int i) {//根据编号得到通往的站点
-		return toStation.get(i);
 	}
 	public String getToRoad(int i) {//根据编号得到通往的路的编号
 		return toRoad.get(i);

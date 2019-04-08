@@ -30,7 +30,7 @@ public class Dijkstra{
   }
   //不使用迪杰斯特拉算法选择出发方向  仅选择当前站点车最少的其中一个方向
   //当算法运行时间过长时使用这一方法
-  public static void chooseStartChannel(Car car) {
+  /*public static void chooseStartChannel(Car car) {
 	Vertex startVertex=g.getVertex(car.getFrom());
 	Vertex toVertex=null;
 	int maxWeight=0;
@@ -43,7 +43,6 @@ public class Dijkstra{
 	}
 	Station fromStation;
 	fromStation=Main.allStations.get(car.getFrom());
-	int index=fromStation.toStation.indexOf(toVertex.ID);
 	String toRoad=fromStation.toRoad.get(index);
 	if(Main.allRoads.get(toRoad).getStartId().equals(fromStation.getId()))
 	{
@@ -52,7 +51,7 @@ public class Dijkstra{
 	else {
 		car.nextChannels=Main.allRoads.get(toRoad).reverseChannel;
 	}
-}
+}*/
   //使用动态迪杰斯特拉算法获得下一步想要去的路
   public static void getRoute(Car car){
 		String startId;
@@ -68,7 +67,7 @@ public class Dijkstra{
 			}
 			else {
 				//下一步的目标
-				car.nextChannels=car.nextChannelList.get(car.realRoute.indexOf(car.nowOnChannel.ID)+1);
+				car.nextChannels=car.nextChannelList.get(car.realRoute.indexOf(car.nowOnChannel.getId())+1);
 			}
 			return;
 		}

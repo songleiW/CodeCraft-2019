@@ -18,10 +18,16 @@ public  class forEachRoad {
 		for(String roadId:Main.roadID)//遍历每条路
 		{
 			Road road=Main.allRoads.get(roadId);
-			ManagerChannel(road.forwardChannel);//先遍历正向车道
+			for(Channel channel:road.forwardChannel)//先遍历正向车道
+			{
+				ManageOneChannel(channel);
+			}
 			if(road.getIsDuplex())//如果是双向车道 再遍历负向
 			{
-				ManagerChannel(road.reverseChannel);//再遍历负向车
+				for(Channel channel:road.reverseChannel)//先遍历正向车道
+				{
+					ManageOneChannel(channel);
+				}
 			}
 		}
 	}
@@ -51,7 +57,8 @@ public  class forEachRoad {
 			}
 			else//不是第一辆车
 			{
-				distance=channel.carPortList.get(i-1).nowLocation-car.nowLocation;//与前车的距离
+				Car frontCar=channel.carPortList.get(i-1);//前车
+				distance=frontCar.nowLocation-car.nowLocation;//与前车的距离
 				if(speed<distance)//不会追尾前车
 				{
 					car.setEndThisTime();//结束本周期调度
@@ -60,21 +67,15 @@ public  class forEachRoad {
 				}
 				else //会追尾前车
 				{
-					if(channel.carPortList.get(i-1).isEndThisTime())//前车已经结束本周期活动  否则的话就等前车走之后再行动
+					if(frontCar.isEndThisTime())//前车已经结束本周期活动  否则的话就等前车走之后再行动
 					{
 						car.setEndThisTime();//结束本周期调度
 						//车辆前进到前车后一位
-						car.nowLocation=channel.carPortList.get(i-1).nowLocation-1;
+						car.nowLocation=frontCar.nowLocation-1;
 						Main.NumberEndThisTime++;//结束本周期车的数目加一
 					}
 				}
 			}
-		}
-	}
-	public static void ManagerChannel(ArrayList<Channel> channels) {
-		for(Channel channel:channels)
-		{
-			ManageOneChannel(channel);
 		}
 	}
 }
