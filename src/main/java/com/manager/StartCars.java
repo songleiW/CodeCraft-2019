@@ -9,7 +9,7 @@ import com.common.Station;
 import com.huawei.*;
 import com.util.Dijkstra;
 public class StartCars {
-	public static void startNewCars(boolean isStartPriorityCars){
+	public static void startNewCars(boolean isStartPriorityCars,boolean isManageOneRoad,Channel lastChannel){
 		ArrayList<String> startCarsId=isStartPriorityCars?Main.priorityCarsId:Main.nonPriorityCarsId;
 		//判断是发优先级车辆还是非优先级车辆 因为两种车没有存在统一list中
 		for(int i=0;i<startCarsId.size();i++)
@@ -38,6 +38,13 @@ public class StartCars {
 			if(!car.isPriority())//非优先车辆
 			{
 				Dijkstra.getRoute(car);//函数内部判断是否是预置车辆
+			}
+			if(isManageOneRoad)//只处理一个道路 
+			{
+				if(!(car.getFrom().equals(lastChannel.getFrom())&&car.nextChannels.get(0).getTo().equals(lastChannel.getTo())))
+				{
+					continue;
+				}
 			}
 			if(successStartCar(car))//发车成功
 			{

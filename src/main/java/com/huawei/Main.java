@@ -78,7 +78,7 @@ public class Main {
 			NOWTIME++;//时间片加一
 			InitCarState();			//初始化车的状态
 			forEachRoad.searchRoad();
-			StartCars.startNewCars(true);		//优先车辆发车
+			StartCars.startNewCars(true,false,null);		//优先车辆发车
 			while(NumberEndThisTime<nowOnRoadCars)		//当所有在路上的车辆都完成本周期
 			{
 				lastNumberEndThisTime=NumberEndThisTime;
@@ -89,8 +89,8 @@ public class Main {
 			}
 			System.out.println("已完成："+endCarsNumber+" 优先未发车："+priorityCarsId.size()
 			+" 非优先车未发车："+nonPriorityCarsId.size()+" 在路上:"+nowOnRoadCars+" 时间:"+NOWTIME);
-			StartCars.startNewCars(true);		//优先车辆发车
-			StartCars.startNewCars(false);		//非优先新车上路
+			StartCars.startNewCars(true,false,null);		//优先车辆发车
+			StartCars.startNewCars(false,false,null);		//非优先新车上路
 			//DisplayResult.visulization();//可视化准备函数
 		}
 		long endTime=System.currentTimeMillis();		 //获取结束时间
@@ -118,11 +118,9 @@ public class Main {
 		}
 	}
 	public static void calculateScore() {
-		a=((int)(a*100000))/100000.0;
-		b=((int)(b*100000))/100000.0;
 		Tpri=priorityLatestEndTime-CreateCars.priorityEarlistPlanStartTime;
-		TE=(int) (a*Tpri+NOWTIME);
-		TESum=(int) (b*Tsumpri+Tsum);
+		TE=(int) Math.round(a*Tpri+NOWTIME);
+		TESum=(int) Math.round(b*Tsumpri+Tsum);
 		System.out.println("最终调度时间:"+TE);
 		System.out.println("最终总调度时间:"+TESum);
 		logger.info("最终调度时间:"+TE);

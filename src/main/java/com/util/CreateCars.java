@@ -5,6 +5,7 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.text.NumberFormat;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
@@ -81,19 +82,29 @@ public class CreateCars {
 				Main.nonPriorityCarsId.add(String.valueOf(id));
 			}
 			//计算a b
-			double a,b;
+			double a=0,b=0;
 			a=(priorityId.size()+nonPriorityId.size())*0.05/priorityId.size();
 			a+=(maxSpeedAllCars/minSpeedAllCars)*0.2375/(priorityMaxSpeed/priorityMinSpeed);
+			a=Math.round(a*100000)/100000.0;//保留五位小数
 			a+=(latestPlanStartTimeAllCars/earlistPlanStartTimeAllCars)*0.2375/(priorityLatestPlanStartTime/priorityEarlistPlanStartTime);
+			a=Math.round(a*100000)/100000.0;//保留五位小数
 			a+=startIdDistributionAllCars.size()*0.2375/prioritStartIdDistribution.size();
+			a=Math.round(a*100000)/100000.0;//保留五位小数
 			a+=endIdDistributionAllCars.size()*0.2375/prioritEndIdDistribution.size();
+			a=Math.round(a*100000)/100000.0;//保留五位小数
 			Main.a=a;
 			b=(priorityId.size()+nonPriorityId.size())*0.8/priorityId.size();
+			b=Math.round(b*100000)/100000.0;//保留五位小数
 			b+=(maxSpeedAllCars/minSpeedAllCars)*0.05/(priorityMaxSpeed/priorityMinSpeed);
+			b=Math.round(b*100000)/100000.0;//保留五位小数
 			b+=(latestPlanStartTimeAllCars/earlistPlanStartTimeAllCars)*0.05/(priorityLatestPlanStartTime/priorityEarlistPlanStartTime);
+			b=Math.round(b*100000)/100000.0;//保留五位小数
 			b+=startIdDistributionAllCars.size()*0.05/prioritStartIdDistribution.size();
+			b=Math.round(b*100000)/100000.0;//保留五位小数
 			b+=endIdDistributionAllCars.size()*0.05/prioritEndIdDistribution.size();
+			b=Math.round(b*100000)/100000.0;//保留五位小数
 			Main.b=b;
+			System.out.println("参数a："+a+"  参数b："+b);
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
