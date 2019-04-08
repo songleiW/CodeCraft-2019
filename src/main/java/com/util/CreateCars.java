@@ -67,6 +67,10 @@ public class CreateCars {
 					prioritEndIdDistribution.put(Integer.parseInt(car.getTo()),0);
 				}
 				else {
+					if(!car.isPreSet())
+					{
+						Main.nonPriorityAndNonPresetCars++;
+					}
 					nonPriorityId.add(Integer.parseInt(car.getId()));
 				}
 			}
@@ -105,7 +109,6 @@ public class CreateCars {
 			b+=endIdDistributionAllCars.size()*0.05/prioritEndIdDistribution.size();
 			b=Math.round(b*100000)/100000.0;//保留五位小数
 			Main.b=b;
-			System.out.println("参数a："+a+"  参数b："+b);
 		} catch (IOException e) {
 			e.printStackTrace();
 		}

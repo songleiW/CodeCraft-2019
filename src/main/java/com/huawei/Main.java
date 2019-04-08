@@ -4,6 +4,8 @@ import java.security.PublicKey;
 import java.util.ArrayList;
 import java.util.Hashtable;
 
+import javax.print.attribute.standard.Sides;
+
 import org.apache.log4j.Logger;
 
 import com.manager.StartCars;
@@ -31,6 +33,7 @@ public class Main {
 	public static long Tpri,TE,TESum=0,Tsumpri=0,Tsum=0;
 	public static int priorityLatestEndTime=0;//优先车的最晚完成时间
 	public static ArrayList<String> nowOnRoadCarId=new ArrayList<String>();		//目前在路上的车的ID
+	public static int nonPriorityAndNonPresetCars=0;
 	//×××××××××××××××××各种ID便于获得对应的类×××××××××××××××××××××××××××××××××
 	public static ArrayList<String> roadID=new ArrayList<String>();		//路ID
 	public static ArrayList<String> nonPriorityCarsId=new ArrayList<String>();		//非优先的车ID
@@ -65,8 +68,11 @@ public class Main {
 		//sortStartCars.sortCarsIdMap(priorityCarsId);//优先车排序
 		//sortStartCars.sortCarsIdMap(nonPriorityCarsId);//非优先车排序
 		System.out.println("信息读取完成");
+		System.out.println("参数a："+a+"  参数b："+b);
+		System.out.println("优先车辆："+priorityCarsId.size()+"  非优先车辆："+nonPriorityCarsId.size()+
+				"  既不是优先也不预置车辆："+nonPriorityAndNonPresetCars);
 		Dijkstra.newGraph();		//新建图
-		MaxNumberCarsOnRoad=roadID.size()*14;
+		MaxNumberCarsOnRoad=roadID.size()*13;
 		saveCarID.addAll(nonPriorityCarsId);
 		saveCarID.addAll(priorityCarsId);
 		//两个变量用于判断死否发生死锁 
