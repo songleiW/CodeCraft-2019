@@ -20,7 +20,6 @@ public class Car {
 	private boolean isPriority=false;
 	private boolean isPreset=false;
 	
-	public boolean isEnd=false;//是否完成整个规划
 	public ArrayList<String> realRoute=new ArrayList<String>();//表示车辆实际走过的路线
 	public ArrayList<Channel> nextChannels=null;//下一条想要去的路
 	//对于预置车辆  下一步的车道已经确定了

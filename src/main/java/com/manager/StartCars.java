@@ -16,13 +16,17 @@ public class StartCars {
 		{
 			String ID=startCarsId.get(i);
 			Car car=Main.allCars.get(ID);
-			if(Main.nowOnRoadCars>=Main.MaxNumberCarsOnRoad)//上路车辆过多 需要限制一下
-			{
-				if(!car.isPreSet()&&!car.isPriority())//不是预置车辆可以不上路
+		//	if(Main.nowOnRoadCars>=Main.MaxNumberCarsOnRoad)//上路车辆过多 需要限制一下
+			//{
+				if(!car.isPreSet()&&Main.isLocked)//不是预置车辆可以不上路
 				{
 					continue;
 				}
-			}
+				//if(!car.isPreSet()&&Main.nowOnRoadCars>=Main.MaxNumberCarsOnRoad)
+				//{
+					//continue;
+				//}
+			//}
 			if(car.getPlanTime()>Main.NOWTIME)//车辆没到计划发车时间
 			{
 				continue;

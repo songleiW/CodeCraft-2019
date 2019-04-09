@@ -7,4 +7,5 @@ public class Edge{
 		this.target = target;
 		this.weight = weight;
 	}
+	
 }
