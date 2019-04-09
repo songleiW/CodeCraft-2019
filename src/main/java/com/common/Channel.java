@@ -15,13 +15,14 @@ public class Channel {
 	public int maxSpeed;//限速
 	public ArrayList<Car> carPortList=new ArrayList<Car>();//存放车的列表
 	public ArrayList<Car> historyPortList=new ArrayList<Car>();
-	public int historyNowCarsNumber;
-	public Channel(String From,String To,int Length,int MaxSpeed,String id) {//构造函数
+	public int channelNumber=0;
+	public Channel(String From,String To,int Length,int MaxSpeed,String id,int num) {//构造函数
 		this.from=From;
 		this.to=To;
 		this.length=Length;
 		this.maxSpeed=MaxSpeed;
 		ID=id;
+		channelNumber=num;
 	}
 	public String getId()
 	{
@@ -57,8 +58,7 @@ public class Channel {
 	public void addCar(Car car) {
 		nowCarsNumber++;//当前车道车的数量加一
 		carPortList.add(car);
-		int weight=nowCarsNumber;//修改对应道路的权值  防止拥堵 
-		
+		double weight=nowCarsNumber*1.0/(channelNumber*channelNumber);//修改对应道路的权值  防止拥堵 
 		Dijkstra.g.updateEdge(from,to, weight);
 		if(!car.isPreSet())//不是预置车辆才添加路线
 		{
@@ -66,12 +66,8 @@ public class Channel {
 		}
 	}
 	public void removeCar(Car car) {
-		int weight=nowCarsNumber;
-		nowCarsNumber--;
-		if(!car.getId().equals(carPortList.get(0).getId()))
-		{
-			System.exit(0);
-		}
+		double weight=nowCarsNumber*1.0/(channelNumber*channelNumber);
+		nowCarsNumber--; 
 		carPortList.remove(0);
 		Dijkstra.g.updateEdge(from, to, -weight);
 	}

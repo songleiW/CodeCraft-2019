@@ -11,7 +11,7 @@ import com.huawei.*;
 import com.util.Dijkstra;
 public class forEachStation {
 	public static void searchStation() {
-		if(Main.nowOnRoadCars==0)return;//当前没有车在路上
+		if(Main.nowOnRoadCarsNumber==0)return;//当前没有车在路上
 		Station station;
 		Car car;//存放每个第一优先级的车
 		for(String ID:Main.stationID)//遍历站点
@@ -28,10 +28,10 @@ public class forEachStation {
 						break;
 					}
 					Channel lastChannel=car.nowOnChannel;
-					if(successCrossOneCar(car, station))//处理此车  如果有冲突车辆　则下一轮在调度
+					if(successCrossOneCar(car, station))		//处理此车  如果有冲突车辆　则下一轮在调度
 					{
-						forEachRoad.ManageOneChannel(lastChannel);//上一辆车处理成功了  重新遍历这一车道
-						StartCars.startNewCars(true,true,lastChannel);//优先车辆上路 只上路本车上一次所在道路
+						forEachRoad.ManageOneChannel(lastChannel);		//上一辆车处理成功了  重新遍历这一车道
+						StartCars.startNewCars(Main.priorityCarsId,true,lastChannel);		//优先车辆上路 只上路本车上一次所在道路
 					}
 					else 
 					{
@@ -230,6 +230,7 @@ public class forEachStation {
 				{
 					car.nowOnChannel.removeCar(car);		//从上一车道移除
 					//加入下一车道
+					car.waitTime=0;
 					car.setEndThisTime();		//结束这一周期的调度
 					car.nowLocation=nextRoadDistance-nowRoadDistance;
 					Main.NumberEndThisTime++;
@@ -243,6 +244,7 @@ public class forEachStation {
 					{
 						car.nowOnChannel.removeCar(car);		//从上一车道移除
 						//加入下一车道
+						car.waitTime=0;
 						car.setEndThisTime();		//结束这一周期的调度
 						car.nowLocation=frontCar.nowLocation-1;
 						Main.NumberEndThisTime++;

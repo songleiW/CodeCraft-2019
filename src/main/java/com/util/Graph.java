@@ -16,7 +16,7 @@ public class Graph {
 		Edge new_edge = new Edge(vertices.get(dest),weight);
 		s.neighbours.add(new_edge);
 	}
-	public void updateEdge(String src,String dest,int number)
+	public void updateEdge(String src,String dest,Double number)
 	{
 		Vertex s = vertices.get(src);
 		Vertex d = vertices.get(dest);

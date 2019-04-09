@@ -81,13 +81,13 @@ public class Dijkstra{
 		Vertex vStart=g.getVertex(startId);//得到起点站点
 		if(car.nowOnChannel!=null)//加大当前道路的权值 防止原路返回
 		{
-			g.updateEdge(car.nowOnChannel.getTo(), car.nowOnChannel.getFrom(), 10000000);
+			g.updateEdge(car.nowOnChannel.getTo(), car.nowOnChannel.getFrom(), 10000000.0);
 		}
 		calculate(vStart);	
 		Vertex vEnd=g.getVertex(car.getTo());
 		if(car.nowOnChannel!=null)
 		{
-			g.updateEdge(car.nowOnChannel.getTo(),car.nowOnChannel.getFrom(), -10000000);
+			g.updateEdge(car.nowOnChannel.getTo(),car.nowOnChannel.getFrom(), -10000000.0);
 		}		
 		vEnd.path.add(vEnd);
 		car.setPath(vEnd.path.get(0).ID,vEnd.path.get(1).ID);
@@ -105,7 +105,7 @@ public class Dijkstra{
 			Vertex u = queue.poll();
 		
 			for(Edge neighbour:u.neighbours){
-				int newDist = u.minDistance+neighbour.weight;
+				double newDist = u.minDistance+neighbour.weight;
 				
 				if(neighbour.target.minDistance>newDist){
 					// Remove the node from the queue to update the distance value.

@@ -1,5 +1,6 @@
 package com.common;
 
+import java.beans.IntrospectionException;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
@@ -28,6 +29,7 @@ public class Car {
 	public int nowLocation;//车辆目前在道路的位置
 	public Channel nowOnChannel;//现在所在的车道
 	public String nextTurn=null;//下一步想要去的方向
+	public int waitTime=0;		//表示车在当前车道带了多久
 	public Car(String id,String from,String to,int maxSpeed,int planTime,int isPiority,int isPreset)
 	{
 		this.ID=id;

@@ -8,10 +8,11 @@ import com.common.Car;
 import com.common.Channel;
 import com.common.Road;
 import com.huawei.*;
-import com.manager.EndCar;;
+import com.manager.EndCar;
+import com.util.Dijkstra;;
 public  class forEachRoad {
 	public static void searchRoad() {
-		if(Main.nowOnRoadCars==0)
+		if(Main.nowOnRoadCarsNumber==0)
 		{
 			return;//当前没有车在路上
 		}
@@ -48,7 +49,7 @@ public  class forEachRoad {
 			if(i==0)//第一辆车
 			{
 				distance=channel.getLegnth()-car.nowLocation;//本车道剩余距离
-				if(speed<=distance)//不出本路
+				if(speed<=distance)		//不出本路 可以以最大速度行驶 不需要加权重
 				{
 					car.setEndThisTime();//结束本周期调度
 					car.nowLocation+=speed;//车辆前进
@@ -59,7 +60,7 @@ public  class forEachRoad {
 			{
 				Car frontCar=channel.carPortList.get(i-1);//前车
 				distance=frontCar.nowLocation-car.nowLocation;//与前车的距离
-				if(speed<distance)//不会追尾前车
+				if(speed<distance)//不会追尾前车		可以以最大速度行驶 不需要加权重
 				{
 					car.setEndThisTime();//结束本周期调度
 					car.nowLocation+=speed;//车辆前进

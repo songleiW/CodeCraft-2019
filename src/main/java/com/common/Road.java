@@ -17,6 +17,8 @@ public class Road {
 	private boolean isDuplex;
 	public ArrayList<Channel> forwardChannel=new ArrayList<Channel>();//正向车道list
 	public ArrayList<Channel> reverseChannel=new ArrayList<Channel>();//反向车道list
+	public boolean forward=false;
+	public boolean reverse=false;
 	//构造函数
 	public Road(String id,int Length,int Speed,int channelNumber,String start,String end,boolean IsDuplex) {
 		setId(id);//设置车道ID
@@ -28,13 +30,13 @@ public class Road {
 		setDuplex(IsDuplex);
 		for(int i=0;i<channelNumber;i++)
 		{
-			forwardChannel.add(new Channel(start,end,Length,Speed,id));//添加正向车道
+			forwardChannel.add(new Channel(start,end,Length,Speed,id,channelNumber));//添加正向车道
 		}
 		if(IsDuplex)
 		{
 			for(int i=0;i<channelNumber;i++)
 			{
-				reverseChannel.add(new Channel(end,start,Length,Speed,id));//添加逆向车道
+				reverseChannel.add(new Channel(end,start,Length,Speed,id,channelNumber));//添加逆向车道
 			}
 		}
 		

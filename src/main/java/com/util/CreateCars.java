@@ -113,10 +113,12 @@ public class CreateCars {
 			e.printStackTrace();
 		}
 	}
-	public static void presetCars(String presetPath,Hashtable<String, Car> cars) {
+	public static int presetCars(String presetPath,Hashtable<String, Car> cars) {
+		int num=0;
 		try (FileReader reader = new FileReader(presetPath); BufferedReader br = new BufferedReader(reader)) {
 			String line = br.readLine();
 			while ((line = br.readLine()) != null) {
+				num++;
 				String[] strings = line.substring(1, line.length() - 1).split(",");
 				Car car=cars.get(strings[0].trim());//得到这个车
 				car.setMustStartTime(Integer.parseInt(strings[1].trim()));//设置必须出发的时间
@@ -126,8 +128,10 @@ public class CreateCars {
 				}
 				car.setPresetChannels();//设置预置车道
 			}
+			return num;
 		} catch (IOException e) {
 			e.printStackTrace();
+			return num;
 		}
 	}
 }

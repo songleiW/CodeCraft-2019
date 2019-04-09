@@ -4,7 +4,7 @@ public class Vertex implements Comparable<Vertex>{
   public final String ID;
 	public ArrayList<Edge> neighbours;
 	public LinkedList<Vertex> path;
-	public int minDistance = Integer.MAX_VALUE;
+	public double minDistance = Integer.MAX_VALUE;
 	public int compareTo(Vertex other){
 		return Double.compare(minDistance,other.minDistance);		
 	}
