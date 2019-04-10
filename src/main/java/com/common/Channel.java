@@ -64,11 +64,29 @@ public class Channel {
 		{
 			car.realRoute.add(car.nowOnChannel.ID);//添加实际的行车路线
 		}
+		Road road=Main.allRoads.get(ID);
+		road.nowCarsNumber++;
+		if(from.equals(road.getStartId()))
+		{
+			road.forwardFillCoe=road.nowCarsNumber/channelNumber;
+		}
+		else {
+			road.reverseFillCoe=road.nowCarsNumber/channelNumber;
+		}
 	}
 	public void removeCar(Car car) {
 		double weight=nowCarsNumber*1.0/(channelNumber*channelNumber);
 		nowCarsNumber--; 
 		carPortList.remove(0);
 		Dijkstra.g.updateEdge(from, to, -weight);
+		Road road=Main.allRoads.get(ID);
+		road.nowCarsNumber--;
+		if(from.equals(road.getStartId()))
+		{
+			road.forwardFillCoe=road.nowCarsNumber/channelNumber;
+		}
+		else {
+			road.reverseFillCoe=road.nowCarsNumber/channelNumber;
+		}
 	}
 }

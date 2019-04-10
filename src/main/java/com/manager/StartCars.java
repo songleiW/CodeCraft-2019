@@ -9,32 +9,26 @@ import com.common.Station;
 import com.huawei.*;
 import com.util.Dijkstra;
 public class StartCars {
+	public static int thisTimeCanStartCarsNumber=0;//本周期可以发的车
 	public static void startNewCars(ArrayList<String> startCarsId,boolean isManageOneRoad,Channel lastChannel){
 		//判断是发优先级车辆还是非优先级车辆 因为两种车没有存在统一list中
 		for(int i=0;i<startCarsId.size();i++)
 		{
 			String ID=startCarsId.get(i);
 			Car car=Main.allCars.get(ID);
-			if(Main.nowOnRoadCarsNumber>=Main.MaxNumberCarsOnRoad)		//上路车辆过多 需要限制一下
-			{
-				if(!car.isPreSet())	//不是预置车辆可以不上路
-				{
-					continue;
-				}
-			}
-			if(car.getPlanTime()>Main.NOWTIME)		//车辆没到计划发车时间
+			//车辆没到计划发车时间
+			if((car.getPlanTime()>Main.NOWTIME)||(car.isPreSet()&&car.getMustStartTime()>Main.NOWTIME))
 			{
 				continue;
 			}
-			if(car.isPreSet()&&car.getMustStartTime()>Main.NOWTIME)		//预置车辆没到预置发车时间
+			if(Main.nowOnRoadCarsNumber>=Main.MaxNumberCarsOnRoad&&!car.isPreSet())	//上路车辆过多  采用慢开始
 			{
 				continue;
 			}
 			if(car.nextChannels==null)		//一个周期内只获得一次方向
 			{
-				Dijkstra.getRoute(car);		//函数内部判断是否是预置车辆
+				Dijkstra.getRoute(car);//函数内部判断是否是预置车辆
 			}
-			
 			if(isManageOneRoad)		//只处理一个道路 
 			{
 				if(!(car.getFrom().equals(lastChannel.getFrom())&&car.nextChannels.get(0).getTo().equals(lastChannel.getTo())))

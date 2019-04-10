@@ -23,12 +23,12 @@ public class WriteAnswer {
 			try (FileWriter writer = new FileWriter(writeName); BufferedWriter out = new BufferedWriter(writer)) {
 				for (String carID:Main.saveCarID) {
 					Car car = Main.allCars.get(carID);
+					String id = car.getId();
 					if(car.isPreSet())
 					{
 						continue;
 					}
-					String id = car.getId();
-					List<String> path = car.realRoute;
+					List<String> path= car.realRoute;
 					String p = path.get(0);
 					for (int j = 1; j < path.size(); j++) {
 						p = p + "," + path.get(j);

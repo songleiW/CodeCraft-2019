@@ -46,53 +46,23 @@ public class forEachStation {
 	public static boolean successCrossOneCar(Car car,Station station) {
 		String crashRoadId;
 		Car crashCar;		//冲突车辆
-		int dirNow;
-	/*************************车到达终点站 但也许要参与优先级排序***********************************/
-		if(car.getTo().equals(station.getId())) {//车到达终点站  按直行处理
-			if(car.isPriority())//如果是优先车辆
-			{
-				EndCar.OverTheCar(car);
-				return true;	//调度成功
-			}
-			//不是优先车辆
-			dirNow=station.toRoad.indexOf(car.nowOnChannel.getId()); 	//当前车辆路口所处的位置
-			//先处理直行冲突车辆
-			crashRoadId=station.toRoad.get(Math.floorMod(dirNow-1, 4));	//右转冲突道路
-			if(crashRoadId!=null)	//如果直行车道冲突存在
-			{
-				crashCar=getFirstCarOfRoad(station, Main.allRoads.get(crashRoadId));	//获取第一辆车
-				//如果冲突车辆存在且是优先车辆 且打算右转
-				if(crashCar!=null&&crashCar.isPriority()&&getDirection(crashCar,station).equals("R"))
-				{
-					return false;	//结束，等待下一轮
-				}
-			}
-			crashRoadId=station.toRoad.get(Math.floorMod(dirNow+1, 4));	//左转冲突车辆
-			if(crashRoadId!=null)	//如果左转冲突存在
-			{
-				crashCar=getFirstCarOfRoad(station, Main.allRoads.get(crashRoadId));	//获取第一辆车
-				//如果冲突车辆存在且是优先车辆 且打算右转
-				if(crashCar!=null&&crashCar.isPriority()&&getDirection(crashCar,station).equals("L"))
-				{
-					return false;	//结束，等待下一轮
-				}
-			}
-			//否则冲突车辆不存在
-			EndCar.OverTheCar(car);
-			return true;	//调度成功
-		}
-		/*************************车没到达终点站*************************************************/
-		String dir=getDirection(car,station);		//更新道路状况后 获得方向 
-		ArrayList<Channel> toChannel =car.nextChannels;		//获得下一步想要去的路的车道
-		dirNow=station.toRoad.indexOf(car.nowOnChannel.getId());
-		if(dir.equals("D"))		//直行 
+		int dirNow=station.toRoad.indexOf(car.nowOnChannel.getId());	//当前所在路口的位置
+		String dir=getDirection(car,station);	//更新道路状况后 获得方向 
+		ArrayList<Channel> toChannel=car.nextChannels;
+		if(dir.equals("D"))		//直行  或者进站
 		{
 			if(car.isPriority())		//如果是优先车辆
 			{
-				return successThroughCross(car,toChannel,station);
+				if(car.getTo().equals(station.getId()))			//到达终点站
+				{
+					EndCar.OverTheCar(car);
+					return true;
+				}
+				else {
+					return successThroughCross(car,toChannel,station);
+				}
 			}
 			//不是优先车辆
-			dirNow=station.toRoad.indexOf(car.nowOnChannel.getId());
 			//先处理直行冲突车辆
 			crashRoadId=station.toRoad.get(Math.floorMod(dirNow-1, 4));		//右转冲突车辆
 			if(crashRoadId!=null)		//如果直行车道冲突存在
@@ -115,11 +85,19 @@ public class forEachStation {
 				}
 			}
 			//否则冲突车辆不存在
-			return successThroughCross(car,toChannel,station);
+			if(car.getTo().equals(station.getId()))			//到达终点站
+			{
+				EndCar.OverTheCar(car);
+				return true;
+			}
+			else {
+				toChannel =car.nextChannels;		//获得下一步想要去的路的车道
+				return successThroughCross(car,toChannel,station);
+			}
 		}
 		else if(dir.equals("L"))		//左转需要防止与直行的车冲突
 		{
-			if(car.isPriority())		//如果是优先车辆
+			if(car.isPriority())		//如果是优先车辆 只需要判断直行冲突
 			{
 				//获得可能冲突的路的状况
 				crashRoadId=station.toRoad.get(Math.floorMod(dirNow-1, 4));
@@ -135,13 +113,12 @@ public class forEachStation {
 				return successThroughCross(car,toChannel,station);
 			}
 			else {		//不是优先车辆
-				dirNow=station.toRoad.indexOf(car.nowOnChannel.getId());
 				//先处理直行冲突车辆
 				crashRoadId=station.toRoad.get(Math.floorMod(dirNow-1, 4));		//直行转冲突车辆
 				if(crashRoadId!=null)		//如果直行车道冲突存在
 				{
 					crashCar=getFirstCarOfRoad(station, Main.allRoads.get(crashRoadId));		//获取第一辆车
-					//冲突车辆存在且打算直行不需要判断是否是优先车辆
+					//冲突车辆存在且打算直行 不需要判断是否是优先车辆
 					if(crashCar!=null&&getDirection(crashCar,station).equals("D"))
 					{
 						return false;		//结束，等待下一轮
@@ -230,7 +207,6 @@ public class forEachStation {
 				{
 					car.nowOnChannel.removeCar(car);		//从上一车道移除
 					//加入下一车道
-					car.waitTime=0;
 					car.setEndThisTime();		//结束这一周期的调度
 					car.nowLocation=nextRoadDistance-nowRoadDistance;
 					Main.NumberEndThisTime++;
@@ -244,7 +220,6 @@ public class forEachStation {
 					{
 						car.nowOnChannel.removeCar(car);		//从上一车道移除
 						//加入下一车道
-						car.waitTime=0;
 						car.setEndThisTime();		//结束这一周期的调度
 						car.nowLocation=frontCar.nowLocation-1;
 						Main.NumberEndThisTime++;
@@ -272,35 +247,35 @@ public class forEachStation {
 		Car car;
 		for(Channel channel:channels)
 		{
-			if(channel.nowCarsNumber==0)//当前车道为空
+			if(channel.nowCarsNumber==0)		//当前车道为空
 			{
 				return channel;
 			}
 			car=channel.carPortList.get(channel.carPortList.size()-1);//获取最后一辆车
-			if(car.isEndThisTime()&&car.nowLocation==1)//前车已经行驶完毕，并且在第一个位置 就遍历下一车道
+			if(car.isEndThisTime()&&car.nowLocation==1)		//前车已经行驶完毕，并且在第一个位置 就遍历下一车道
 			{
 				continue;
 			}
-			else//前车没有行驶完毕，说明此车道可以行驶　就返回这一车道
+			else		//前车没有行驶完毕，说明此车道可以行驶　就返回这一车道
 			{
 				return channel;
 			}
 		}
-		return null;//返回空，车道已满,后车就可以结束这一阶段的行驶了
+		return null;		//返回空，车道已满,后车就可以结束这一阶段的行驶了
 	}
-	public static String getDirection(Car car,Station nowStation) {//用于获得车的前进方向
-		if(car.getTo().equals(nowStation.getId()))//本车需要出站，但是在最后一条路上
+	public static String getDirection(Car car,Station nowStation) {		//用于获得车的前进方向
+		if(car.getTo().equals(nowStation.getId()))		//本车需要出站，但是在最后一条路上
 		{
-			return "D";//也需要按直行处理
+			return "D";		//也需要按直行处理
 		}
 		if(car.nextTurn!=null)//已经选择过方向了
 		{
 			return car.nextTurn;
 		}
 		//否则  还没有选择过方向
-		Dijkstra.getRoute(car);//更新车的路径选择
-		String nowOnRoad=car.nowOnChannel.getId();//目前所在道路的ID
-		String nextToRoad=car.nextChannels.get(0).getId();//下一步想要去的道路的ID
+		Dijkstra.getRoute(car);		//更新车的路径选择
+		String nowOnRoad=car.nowOnChannel.getId();		//目前所在道路的ID
+		String nextToRoad=car.nextChannels.get(0).getId();		//下一步想要去的道路的ID
 		int indexNow,indexNext;
 		indexNow=nowStation.toRoad.indexOf(nowOnRoad);
 		indexNext=nowStation.toRoad.indexOf(nextToRoad);
@@ -331,10 +306,6 @@ public class forEachStation {
     	}
     	else if(road.getIsDuplex())//道路是双向的,则起点是本站点，选择负向车道
     	{
-    		if(!road.getStartId().equals(station.getId()))//道路的终点是本站点
-    		{
-    			System.exit(0);
-    		}
     		channels=road.reverseChannel;
     	}
     	else//单向车道 且终点不是本站 
@@ -343,30 +314,31 @@ public class forEachStation {
 		}
 		for(Channel channel:channels)
 		{
-			if(!channel.carPortList.isEmpty())
+			if(channel.carPortList.isEmpty())
 			{
-				firstCar=channel.carPortList.get(0);
-				if(firstCar.isEndThisTime())//已经结束这一周期
-				{
-					continue;
-				}
-				if(firstCar.isPriority())//如果是优先车辆
-				{
-					priorityCars.add(firstCar);//就加入优先队列
-				}
-				else {//非优先车辆
-					nonPriorityCars.add(firstCar);//本车道第一位的车
-				}
+				continue;
+			}
+			firstCar=channel.carPortList.get(0);
+			if(firstCar.isEndThisTime())//已经结束这一周期
+			{
+				continue;
+			}
+			if(firstCar.isPriority())//如果是优先车辆
+			{
+				priorityCars.add(firstCar);//就加入优先队列
+			}
+			else {//非优先车辆
+				nonPriorityCars.add(firstCar);//本车道第一位的车
 			}
 		}
 		Car car=getFirstCarOfList(priorityCars);//先遍历优先车辆队列找到了可以动的车
 		return car!=null?car:getFirstCarOfList(nonPriorityCars);//如果在优先队列内找到了车就范挥着个车 否则遍历非优先队列
 	}
 	public static Car getFirstCarOfList(ArrayList<Car> cars ) {
-		if(!cars.isEmpty())//优先车队列非空 先遍历优先队列
+		if(!cars.isEmpty())		//优先车队列非空 先遍历优先队列
 		{
-			Car carResult=cars.get(0);//初始选择第一位车
-			for(Car car:cars)//找到最考前的车
+			Car carResult=cars.get(0);		//初始选择第一位车
+			for(Car car:cars)		//找到最考前的车
 			{
 				if(car.nowLocation>carResult.nowLocation)
 				{

@@ -12,6 +12,8 @@ public class Road {
 	private int maxSpeed;
 	private int channelNumber;
 	public int nowCarsNumber;
+	public double forwardFillCoe=0;
+	public double reverseFillCoe=0;
 	private String startId;
 	private String endId;
 	private boolean isDuplex;

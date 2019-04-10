@@ -5,6 +5,7 @@ import com.common.Channel;
 import com.huawei.Main;
 public class EndCar {
 	public static void OverTheCar(Car car) {
+		Main.thisTimeEndCarsNumber++;
 		car.nowOnChannel.removeCar(car);		//移除出车道
 		car.setEndThisTime();
 		Main.endCarsNumber++; 

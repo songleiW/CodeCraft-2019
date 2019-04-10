@@ -10,13 +10,8 @@ import com.common.Station;
 import com.huawei.Main;
 public class Dijkstra{
 
-  public static Graph g = new Graph(Main.stationID);
-  //新建地图
+  public static Graph g = new Graph(Main.stationID);  //新建地图
   public static void newGraph() throws IOException {
-	  
-	  //File writeName = new File("config/visulazation.txt");
-	  //writeName.delete();
-	  //writeName.createNewFile();
 	  for(String roadId:Main.roadID)
 		{
 			Road road =Main.allRoads.get(roadId);
@@ -28,39 +23,11 @@ public class Dijkstra{
 			}
 		}
   }
-  //不使用迪杰斯特拉算法选择出发方向  仅选择当前站点车最少的其中一个方向
-  //当算法运行时间过长时使用这一方法
-  /*public static void chooseStartChannel(Car car) {
-	Vertex startVertex=g.getVertex(car.getFrom());
-	Vertex toVertex=null;
-	int maxWeight=0;
-	for(Edge e:startVertex.neighbours)
-	{
-		if(maxWeight<e.weight)
-		{
-			toVertex=e.target;
-		}
-	}
-	Station fromStation;
-	fromStation=Main.allStations.get(car.getFrom());
-	String toRoad=fromStation.toRoad.get(index);
-	if(Main.allRoads.get(toRoad).getStartId().equals(fromStation.getId()))
-	{
-		car.nextChannels=Main.allRoads.get(toRoad).forwardChannel;
-	}
-	else {
-		car.nextChannels=Main.allRoads.get(toRoad).reverseChannel;
-	}
-}*/
   //使用动态迪杰斯特拉算法获得下一步想要去的路
-  public static void getRoute(Car car){
+  public static boolean getRoute(Car car){
 		String startId;
 		if(car.isPreSet())//如果是预置车辆
 		{
-			if(car.nextChannels!=null)
-			{
-				return;//已经有了选择
-			}
 			if(car.nowOnChannel==null)//第一次发车
 			{
 				car.nextChannels=car.nextChannelList.get(0);//下一步想要去的车道
@@ -69,7 +36,7 @@ public class Dijkstra{
 				//下一步的目标
 				car.nextChannels=car.nextChannelList.get(car.realRoute.indexOf(car.nowOnChannel.getId())+1);
 			}
-			return;
+			return true;
 		}
 		if(car.nowOnChannel==null)
 		{
@@ -92,6 +59,7 @@ public class Dijkstra{
 		vEnd.path.add(vEnd);
 		car.setPath(vEnd.path.get(0).ID,vEnd.path.get(1).ID);
 		initGraph(g);
+		return true;
 	}
   //计算地图权值
   public static void calculate(Vertex source){
@@ -105,18 +73,13 @@ public class Dijkstra{
 			Vertex u = queue.poll();
 		
 			for(Edge neighbour:u.neighbours){
-				double newDist = u.minDistance+neighbour.weight;
+				double newDist = u.minDistance+neighbour.weight;	//越远的节点需要增大权值
 				
 				if(neighbour.target.minDistance>newDist){
-					// Remove the node from the queue to update the distance value.
 					queue.remove(neighbour.target);
 					neighbour.target.minDistance = newDist;
-					
-					// Take the path visited till now and add the new node.s
 					neighbour.target.path = new LinkedList<Vertex>(u.path);
 					neighbour.target.path.add(u);
-					
-					//Reenter the node with new distance.
 					queue.add(neighbour.target);					
 				}
 			}

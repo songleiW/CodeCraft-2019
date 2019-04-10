@@ -24,33 +24,33 @@ import com.common.Station;
 import com.huawei.*;
 public class Main {
 	private static final Logger logger = Logger.getLogger(Main.class);
-	//××××××××××××××××××××××公共变量×××××××××××××××××××××××××××××××××××××××××××××××
+	//××××××××××××××××××××××××××××××××××公共变量×××××××××××××××××××××××××××××××××××××××××××××××
 	public static int NOWTIME=0;		//当前时间片
 	public static int nowOnRoadCarsNumber=0;		//记录当前有所少车在路上
 	public static int endCarsNumber=0;		//记录当前有多少车已经完成
 	public static int NumberEndThisTime=0;		//记录结束这一周车的数目
 	public static int MaxNumberCarsOnRoad=0;		//超过这一阈值 将不会执行发车函数
-	public static double a,b;//计分系数
+	public static double a,b;		//计分系数
 	public static long Tpri,TE,TESum=0,Tsumpri=0,Tsum=0;
-	public static int priorityLatestEndTime=0;//优先车的最晚完成时间
+	public static int priorityLatestEndTime=0;		//优先车的最晚完成时间
 	public static ArrayList<String> nowOnRoadCarId=new ArrayList<String>();		//目前在路上的车的ID
 	public static int nonPriorityAndNonPresetCars=0;
 	public static int presetCarsNumber=0;
-	//×××××××××××××××××各种ID便于获得对应的类×××××××××××××××××××××××××××××××××
+	//××××××××××××××××××××××××××××各种ID便于获得对应的类×××××××××××××××××××××××××××××××××
 	public static ArrayList<String> roadID=new ArrayList<String>();		//路ID
 	public static ArrayList<String> nonPriorityCarsId=new ArrayList<String>();		//非优先的车ID
 	public static ArrayList<String> priorityCarsId=new ArrayList<String>();		//优先车ID
 	public static ArrayList<String> saveCarID=new ArrayList<String>();		//车的ID的副本
 	public static ArrayList<String> stationID=new ArrayList<String>();		//路口ID
-	//*****************车，路，路口用了map，提高访问速度××××××××××××××××××
+	//****************************车，路，路口用了map，提高访问速度××××××××××××××××××
 	public static Hashtable<String, Road> allRoads=new Hashtable<String, Road>();		//道路ID和道路类map
 	public static Hashtable<String, Station> allStations=new Hashtable<String, Station>();
 	public static Hashtable<String, Car> allCars=new Hashtable<String, Car>();
 	public static boolean flag=false;
+	public static int thisTimeEndCarsNumber=0;
 	public static void main(String[] args) throws IOException {
 		long startTime=System.currentTimeMillis();   //获取开始时间
 		if (args.length != 5) {
-		//	logger.error("please input args: inputFilePath, resultFilePath");
 			return;
 		}
 			String carPath = args[0];
@@ -58,10 +58,6 @@ public class Main {
 	        String crossPath = args[2];
 	        String presetAnswerPath = args[3];
 	        String answerPath = args[4];
-	       // logger.info("carPath = " + carPath + " roadPath = " + roadPath + 
-	        	//	" crossPath = " + crossPath + " presetAnswerPath = " + presetAnswerPath + " and answerPath = " + answerPath);
-
-		//logger.info("start read input files");
 		//初始化读取数据
 		roadID=CreateRoad.readRoad(roadPath, allRoads);		//创建道路;
 		stationID=CreateStation.readStation(crossPath, allStations);		//创建站点 并排序
@@ -80,10 +76,11 @@ public class Main {
 		//两个变量用于判断死否发生死锁 
 		int lastNumberEndThisTime;
 		int lastnowOnRoadCars;
+		int lastEndCarsNumber;
 		//主循环
-		while(endCarsNumber<allCars.size())//当所有车辆都到达站点
+		while(endCarsNumber<allCars.size())		//当所有车辆都到达站点
 		{
-			NOWTIME++;//时间片加一
+			NOWTIME++;		//时间片加一
 			InitCarState();			//初始化车的状态
 			forEachRoad.searchRoad();
 			StartCars.startNewCars(priorityCarsId,false,null);		//优先车辆发车
@@ -91,12 +88,15 @@ public class Main {
 			{
 				lastNumberEndThisTime=NumberEndThisTime;
 				lastnowOnRoadCars=nowOnRoadCarsNumber;
+				lastEndCarsNumber=endCarsNumber;
 				forEachStation.searchStation();		//再遍历站点
 				//如果一个周期内既没有车结束这一周期也没有车进站则发生死锁
-				isLock(lastNumberEndThisTime,lastnowOnRoadCars);
+				isLock(lastNumberEndThisTime,lastnowOnRoadCars,lastEndCarsNumber);
 			}
-			System.out.println("已完成："+endCarsNumber+" 优先未发车："+priorityCarsId.size()
-			+" 非优先车未发车："+nonPriorityCarsId.size()+" 在路上:"+nowOnRoadCarsNumber+" 时间:"+NOWTIME);
+			logger.info("已完成："+endCarsNumber+" 优先未发车："+priorityCarsId.size()
+			+" 非优先车未发车："+nonPriorityCarsId.size()+" 在路上:"+nowOnRoadCarsNumber+" 时间："+NOWTIME);
+			//System.out.println("已完成："+endCarsNumber+" 优先未发车："+priorityCarsId.size()
+			//+" 非优先车未发车："+nonPriorityCarsId.size()+" 在路上:"+nowOnRoadCarsNumber+" 时间："+NOWTIME);
 			StartCars.startNewCars(priorityCarsId,false,null);		//优先车辆发车
 			StartCars.startNewCars(nonPriorityCarsId,false,null);		//非优先新车上路
 		}
@@ -109,6 +109,7 @@ public class Main {
 	public static void InitCarState() {
 		NumberEndThisTime=0;		//所有车都未结束本周期
 		Car car=null;
+		thisTimeEndCarsNumber=0;
 		for(String Id:nowOnRoadCarId)
 		{
 			car=allCars.get(Id);
@@ -136,8 +137,9 @@ public class Main {
 			road.reverse=false;
 		}
 	}
-	public static void isLock(int lastNumberEndThisTime,int lastnowOnRoadCars) {
-		if(lastNumberEndThisTime==NumberEndThisTime&&lastnowOnRoadCars==nowOnRoadCarsNumber)
+	public static void isLock(int lastNumberEndThisTime,int lastnowOnRoadCars,int lastEndCarsNumber) {
+		if(lastNumberEndThisTime==NumberEndThisTime&&lastnowOnRoadCars==nowOnRoadCarsNumber
+				&&lastEndCarsNumber==endCarsNumber)
 		{
 			System.out.println("锁死！");
 			System.exit(0);
