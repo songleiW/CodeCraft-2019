@@ -1,6 +1,9 @@
 package com.manager;
 import java.awt.List;
+import java.io.ObjectInputStream.GetField;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Hashtable;
 
 import com.common.Car;
 import com.common.Channel;
@@ -9,23 +12,16 @@ import com.common.Station;
 import com.huawei.*;
 import com.util.Dijkstra;
 public class StartCars {
-	public static int thisTimeCanStartCarsNumber=0;//本周期可以发的车
 	public static void startNewCars(ArrayList<String> startCarsId,boolean isManageOneRoad,Channel lastChannel){
-		//判断是发优先级车辆还是非优先级车辆 因为两种车没有存在统一list中
 		for(int i=0;i<startCarsId.size();i++)
 		{
-			String ID=startCarsId.get(i);
-			Car car=Main.allCars.get(ID);
-			//车辆没到计划发车时间
-			if((car.getPlanTime()>Main.NOWTIME)||(car.isPreSet()&&car.getMustStartTime()>Main.NOWTIME))
+			String id=startCarsId.get(i);
+			Car car=Main.allCars.get(id);
+			if(Main.nowOnRoadCarsNumber>=Main.MaxNumberCarsOnRoad&&!car.isPreSet())
 			{
-				continue;
+				continue;	
 			}
-			if(Main.nowOnRoadCarsNumber>=Main.MaxNumberCarsOnRoad&&!car.isPreSet())	//上路车辆过多  采用慢开始
-			{
-				continue;
-			}
-			if(car.nextChannels==null)		//一个周期内只获得一次方向
+			if(car.nextChannels==null)
 			{
 				Dijkstra.getRoute(car);//函数内部判断是否是预置车辆
 			}
@@ -38,8 +34,16 @@ public class StartCars {
 			}
 			if(successStartCar(car))		//发车成功
 			{
-				startCarsId.remove(i--);		//因为移除了一辆车 因此 需要回退
-				Main.nowOnRoadCarId.add(ID);
+				if(car.isPriority())		//因为移除了一辆车
+				{
+					Main.priorityCarsId.remove(id);
+					startCarsId.remove(i--);
+				}
+				else {
+					Main.nonPriorityCarsId.remove(id);
+					startCarsId.remove(i--);
+				}
+				Main.nowOnRoadCarId.add(id);
 				Main.nowOnRoadCarsNumber++;		//在路上的车加一
 				Main.NumberEndThisTime++;		//结束这一周期的车加一
 			}

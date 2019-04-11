@@ -40,6 +40,7 @@ public class CreateCars {
 			int priorityLatestPlanStartTime=0;//所有车辆的最晚出发时间
 			Hashtable<Integer, Integer> prioritStartIdDistribution=new Hashtable<Integer, Integer>();//所有车辆的出发点分布
 			Hashtable<Integer, Integer> prioritEndIdDistribution=new Hashtable<Integer, Integer>();//所有车辆的终止点分布
+			int num=0;
 			while ((line = br.readLine()) != null) {
 				String[] strings = line.substring(1, line.length() - 1).split(",");
 				Car car = new Car(strings[0].trim(),strings[1].trim(),strings[2].trim(),

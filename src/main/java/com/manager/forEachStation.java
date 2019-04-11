@@ -31,7 +31,7 @@ public class forEachStation {
 					if(successCrossOneCar(car, station))		//处理此车  如果有冲突车辆　则下一轮在调度
 					{
 						forEachRoad.ManageOneChannel(lastChannel);		//上一辆车处理成功了  重新遍历这一车道
-						StartCars.startNewCars(Main.priorityCarsId,true,lastChannel);		//优先车辆上路 只上路本车上一次所在道路
+						StartCars.startNewCars(Main.thisTimeStartPriorityCarsId,true,lastChannel);		//优先车辆上路 只上路本车上一次所在道路
 					}
 					else 
 					{
