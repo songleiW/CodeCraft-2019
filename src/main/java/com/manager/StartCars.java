@@ -62,10 +62,6 @@ public class StartCars {
 					}
 					continue;
 				}
-				if(!car.isPreSet()&&channel.carPortList.size()>=2)
-				{
-					//return false;
-				}
 				if(speed<frontCar.nowLocation||!car.isPriority())		//不会和前车冲突或不是优先车辆
 				{
 					//本车道第一个车位没有车 可以发车

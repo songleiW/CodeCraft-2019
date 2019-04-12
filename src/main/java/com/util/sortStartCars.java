@@ -40,7 +40,6 @@ public class sortStartCars {
 			}
 		}
 		int i=0;
-		carsId.clear();
 		while(!carsHashtable.isEmpty())
 		{
 			i++;

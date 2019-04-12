@@ -70,7 +70,6 @@ public class Main {
 		System.out.println("优先车辆："+priorityCarsId.size()+"   非优先车辆："+nonPriorityCarsId.size()+
 				"\n预置车辆："+presetCarsNumber+"  既不是优先也不预置车辆："+nonPriorityAndNonPresetCars);
 		Dijkstra.newGraph();		//新建图
-		MaxNumberCarsOnRoad=roadID.size()*15;
 		saveCarID.addAll(nonPriorityCarsId); 
 		saveCarID.addAll(priorityCarsId);
 		//两个变量用于判断死否发生死锁 

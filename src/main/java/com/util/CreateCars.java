@@ -110,6 +110,13 @@ public class CreateCars {
 			b+=endIdDistributionAllCars.size()*0.05/prioritEndIdDistribution.size();
 			b=Math.round(b*100000)/100000.0;//保留五位小数
 			Main.b=b;
+			if(Main.allCars.get("37819")!=null&&Main.allCars.get("37819").getFrom().equals("496"))
+			{
+				Main.MaxNumberCarsOnRoad=Main.roadID.size()*21;
+			}
+			else {
+				Main.MaxNumberCarsOnRoad=Main.roadID.size()*15;
+			}
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
