@@ -23,7 +23,7 @@ import com.common.Road;
 import com.common.Station;
 import com.huawei.*;
 public class Main {
-	private static final Logger logger = Logger.getLogger(Main.class);
+	public static final Logger logger = Logger.getLogger(Main.class);
 	//××××××××××××××××××××××××××××××××××公共变量×××××××××××××××××××××××××××××××××××××××××××××××
 	public static int NOWTIME=0;		//当前时间片
 	public static int nowOnRoadCarsNumber=0;		//记录当前有所少车在路上
@@ -71,7 +71,7 @@ public class Main {
 				"\n预置车辆："+presetCarsNumber+"  既不是优先也不预置车辆："+nonPriorityAndNonPresetCars);
 		Dijkstra.newGraph();		//新建图
 		MaxNumberCarsOnRoad=roadID.size()*15;
-		saveCarID.addAll(nonPriorityCarsId);
+		saveCarID.addAll(nonPriorityCarsId); 
 		saveCarID.addAll(priorityCarsId);
 		//两个变量用于判断死否发生死锁 
 		int lastNumberEndThisTime;
@@ -101,6 +101,7 @@ public class Main {
 		}
 		long endTime=System.currentTimeMillis();		 //获取结束时间
 		System.out.println("程序运行时间： "+(endTime-startTime)/1000.0+"s");
+		logger.info("程序运行时间： "+(endTime-startTime)/1000.0+"s");
 		calculateScore();
 		WriteAnswer.wtiteAnswer(answerPath);
 	}
@@ -112,19 +113,15 @@ public class Main {
 		{
 			car=allCars.get(Id);
 			car.setStartThisTime();		//设置车都未结束这一周期
-			car.nextChannels=null;		//为车重新选取下一步需要走的方向
-			car.nextTurn=null;
 		}
 		for(String Id:priorityCarsId)
 		{
 			car=allCars.get(Id);
-			car.nowOnChannel=null;
 			car.nextChannels=null;		//为车重新选取下一步需要走的方向
 		}
 		for(String Id:nonPriorityCarsId)
 		{
 			car=allCars.get(Id);
-			car.nowOnChannel=null;
 			car.nextChannels=null;		//为车重新选取下一步需要走的方向
 		}
 	}

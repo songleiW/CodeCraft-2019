@@ -56,6 +56,8 @@ public class Channel {
 		return this.maxSpeed;
 	}
 	public void addCar(Car car) {
+		car.nextChannels=null;
+		car.nextTurn=null;
 		nowCarsNumber++;//当前车道车的数量加一
 		carPortList.add(car);
 		double weight=nowCarsNumber*1.0/(channelNumber*channelNumber);//修改对应道路的权值  防止拥堵 

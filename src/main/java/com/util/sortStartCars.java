@@ -40,6 +40,7 @@ public class sortStartCars {
 			}
 		}
 		int i=0;
+		carsId.clear();
 		while(!carsHashtable.isEmpty())
 		{
 			i++;
@@ -47,7 +48,11 @@ public class sortStartCars {
 			{
 				for(String id:carsHashtable.get(i))
 				{
-					carsId.add(id);
+					Car car=Main.allCars.get(id);
+					if(Main.MaxNumberCarsOnRoad-Main.nowOnRoadCarsNumber>=carsId.size()||car.isPreSet())
+					{
+						carsId.add(id);
+					}
 				}
 			}
 			carsHashtable.remove(i);

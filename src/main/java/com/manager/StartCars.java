@@ -17,10 +17,6 @@ public class StartCars {
 		{
 			String id=startCarsId.get(i);
 			Car car=Main.allCars.get(id);
-			if(Main.nowOnRoadCarsNumber>=Main.MaxNumberCarsOnRoad&&!car.isPreSet())
-			{
-				continue;	
-			}
 			if(car.nextChannels==null)
 			{
 				Dijkstra.getRoute(car);//函数内部判断是否是预置车辆
@@ -65,6 +61,10 @@ public class StartCars {
 						return false;
 					}
 					continue;
+				}
+				if(!car.isPreSet()&&channel.carPortList.size()>=2)
+				{
+					//return false;
 				}
 				if(speed<frontCar.nowLocation||!car.isPriority())		//不会和前车冲突或不是优先车辆
 				{
