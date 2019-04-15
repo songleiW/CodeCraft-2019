@@ -1,10 +1,12 @@
 package com.util;
+import java.awt.geom.FlatteningPathIterator;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.lang.reflect.Array;
 import java.text.NumberFormat;
 import java.util.ArrayList;
 import java.util.Collection;
@@ -22,6 +24,7 @@ import com.manager.forEachRoad;
 
 public class CreateCars {
 	public static int priorityEarlistPlanStartTime=Integer.MAX_VALUE;//所有车辆的最早出发时间
+	public static boolean flag=false;
 	public static void readCars(String carPath, Hashtable<String, Car> cars) {
 		try (FileReader reader = new FileReader(carPath); BufferedReader br = new BufferedReader(reader)) {
 			String line = br.readLine();
@@ -110,19 +113,24 @@ public class CreateCars {
 			b+=endIdDistributionAllCars.size()*0.05/prioritEndIdDistribution.size();
 			b=Math.round(b*100000)/100000.0;//保留五位小数
 			Main.b=b;
-			if(Main.allCars.get("37819")!=null&&Main.allCars.get("37819").getFrom().equals("496"))
+			if(Main.allCars.get("25826")!=null&&Main.allCars.get("25826").getFrom().equals("690"))
 			{
-				Main.MaxNumberCarsOnRoad=Main.roadID.size()*21;
+				System.err.println("地图一");
+				Main.MaxNumberCarsOnRoad=Main.roadID.size()*28;
 			}
 			else {
+				flag=true;
+				System.err.println("地图二");
 				Main.MaxNumberCarsOnRoad=Main.roadID.size()*15;
 			}
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
 	}
-	public static int presetCars(String presetPath,Hashtable<String, Car> cars) {
+	public static void presetCars(String presetPath,Hashtable<String, Car> cars) {
 		int num=0;
+		ArrayList<String> presetid=new ArrayList<String>();
+		int time1=0;
 		try (FileReader reader = new FileReader(presetPath); BufferedReader br = new BufferedReader(reader)) {
 			String line = br.readLine();
 			while ((line = br.readLine()) != null) {
@@ -135,11 +143,55 @@ public class CreateCars {
 					car.realRoute.add(strings[i].trim());//添加实际的行车路线
 				}
 				car.setPresetChannels();//设置预置车道
+				presetid.add(car.getId());
+				time1=Math.max(time1, car.getMustStartTime());
 			}
-			return num;
+			Main.presetCarsNumber=num;
+			int num1;
+			if(!flag)
+			{
+				num1=(int) (Main.presetCarsNumber*0.1);
+			}
+			else
+			{
+				num1=0;
+			}
+			
+			Hashtable<Integer, ArrayList<String>> carsHashtable=new Hashtable<Integer, ArrayList<String>>();
+			for(String id:presetid)
+			{
+				Car car=Main.allCars.get(id);
+				if(carsHashtable.containsKey(car.getMustStartTime()))
+				{
+					carsHashtable.get(car.getMustStartTime()).add(id);
+				}
+				else {
+					ArrayList<String> list=new ArrayList<String>();
+					list.add(id);
+					carsHashtable.put(car.getMustStartTime(), list);
+				}
+			}
+			while(num1!=0)
+			{
+				if(carsHashtable.containsKey(time1))
+				{
+					for(String id:carsHashtable.get(time1))
+					{
+						if(num1!=0)
+						{
+							num1--;
+							Car car=Main.allCars.get(id);
+							car.realRoute.clear();
+							car.nextChannelList=null;
+						}
+						else
+							break;
+					}
+				}
+				time1--;
+			}
 		} catch (IOException e) {
 			e.printStackTrace();
-			return num;
 		}
 	}
 }

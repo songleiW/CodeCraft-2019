@@ -46,10 +46,10 @@ public class Main {
 	public static Hashtable<String, Road> allRoads=new Hashtable<String, Road>();		//道路ID和道路类map
 	public static Hashtable<String, Station> allStations=new Hashtable<String, Station>();
 	public static Hashtable<String, Car> allCars=new Hashtable<String, Car>();
-	public static boolean flag=false;
 	public static int thisTimeEndCarsNumber=0;
 	public static ArrayList<String> thisTimeStartPriorityCarsId=new ArrayList<String>();
 	public static ArrayList<String> thisTimeStartNonPriorityCarsId=new ArrayList<String>();
+	public static int maxChannels=0,maxLength=0;
 	public static void main(String[] args) throws IOException {
 		long startTime=System.currentTimeMillis();   //获取开始时间
 		if (args.length != 5) {
@@ -61,10 +61,10 @@ public class Main {
 	        String presetAnswerPath = args[3];
 	        String answerPath = args[4];
 		//初始化读取数据
-		roadID=CreateRoad.readRoad(roadPath, allRoads);		//创建道路;
-		stationID=CreateStation.readStation(crossPath, allStations);		//创建站点 并排序
+		CreateRoad.readRoad(roadPath, allRoads);		//创建道路;
+		CreateStation.readStation(crossPath, allStations);		//创建站点 并排序
 		CreateCars.readCars(carPath, allCars);		//创建初始车辆
-		presetCarsNumber=CreateCars.presetCars(presetAnswerPath,allCars);		//创建预制车辆
+		CreateCars.presetCars(presetAnswerPath,allCars);		//创建预制车辆
 		System.out.println("信息读取完成");
 		System.out.println("参数a："+a+"  参数b："+b);
 		System.out.println("优先车辆："+priorityCarsId.size()+"   非优先车辆："+nonPriorityCarsId.size()+
@@ -80,9 +80,9 @@ public class Main {
 		while(endCarsNumber<allCars.size())		//当所有车辆都到达站点
 		{
 			NOWTIME++;		//时间片加一
+			InitCarState();			//初始化车的状态
 			thisTimeStartNonPriorityCarsId=sortStartCars.sortCarsId(nonPriorityCarsId);
 			thisTimeStartPriorityCarsId=sortStartCars.sortCarsId(priorityCarsId);
-			InitCarState();			//初始化车的状态
 			forEachRoad.searchRoad();
 			StartCars.startNewCars(thisTimeStartPriorityCarsId,false,null);		//优先车辆发车
 			while(NumberEndThisTime<nowOnRoadCarsNumber)		//当所有在路上的车辆都完成本周期
@@ -95,8 +95,8 @@ public class Main {
 			}
 			StartCars.startNewCars(thisTimeStartPriorityCarsId,false,null);		//优先车辆发车
 			StartCars.startNewCars(thisTimeStartNonPriorityCarsId,false,null);		//非优先新车上路
-			System.out.println("已完成："+endCarsNumber+" 优先未发车："+priorityCarsId.size()
-			+" 非优先车未发车："+nonPriorityCarsId.size()+" 在路上:"+nowOnRoadCarsNumber+" 时间："+NOWTIME);
+			System.out.println("完："+endCarsNumber+" 优先："+priorityCarsId.size()
+			+" 非优先："+nonPriorityCarsId.size()+"在:"+nowOnRoadCarsNumber+" 时："+NOWTIME);
 		}
 		long endTime=System.currentTimeMillis();		 //获取结束时间
 		System.out.println("程序运行时间： "+(endTime-startTime)/1000.0+"s");
@@ -137,6 +137,7 @@ public class Main {
 		TE= Math.round(a*Tpri+NOWTIME);		//四舍五入
 		TESum= Math.round(b*Tsumpri+Tsum);
 		System.err.println("最终调度时间:"+TE+"      最终总调度时间:"+TESum);
+		System.err.println("最终总调度时间:"+TESum);
 		logger.info("最终调度时间:"+TE);
 		logger.info("最终总调度时间:"+TESum+"\n");
 	}

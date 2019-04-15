@@ -17,10 +17,6 @@ public class StartCars {
 		{
 			String id=startCarsId.get(i);
 			Car car=Main.allCars.get(id);
-			if(car.nextChannels==null)
-			{
-				Dijkstra.getRoute(car);//函数内部判断是否是预置车辆
-			}
 			if(isManageOneRoad)		//只处理一个道路 
 			{
 				if(!(car.getFrom().equals(lastChannel.getFrom())&&car.nextChannels.get(0).getTo().equals(lastChannel.getTo())))

@@ -19,7 +19,7 @@ public class Car {
 	private int endTime;
 	private boolean isEndThisTime=false;		//是否结束这一周期
 	private boolean isPriority=false;
-	private boolean isPreset=false;
+	public boolean isPreset=false;
 	public ArrayList<String> realRoute=new ArrayList<String>();		//表示车辆实际走过的路线
 	public ArrayList<Channel> nextChannels=null;		//下一条想要去的路
 	//对于预置车辆  下一步的车道已经确定了

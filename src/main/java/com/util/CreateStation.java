@@ -16,7 +16,7 @@ import com.common.Station;
 import com.huawei.Main;
 
 public class CreateStation {
-	public static ArrayList<String> readStation(String crossPath, Hashtable<String, Station> stations) {
+	public static void readStation(String crossPath, Hashtable<String, Station> stations) {
 		try (FileReader reader = new FileReader(crossPath); BufferedReader br = new BufferedReader(reader)) {
 			String line = br.readLine();
 			ArrayList<Integer> stationID=new ArrayList<Integer>();
@@ -35,10 +35,9 @@ public class CreateStation {
 			{
 				list.add(String.valueOf(i));
 			}
-			return list;
+			Main.stationID=list;
 		} catch (IOException e) {
 			e.printStackTrace();
-			return null;
 		}
 	}
 }

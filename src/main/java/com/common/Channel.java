@@ -62,19 +62,11 @@ public class Channel {
 		carPortList.add(car);
 		double weight=nowCarsNumber*1.0/(channelNumber*channelNumber);//修改对应道路的权值  防止拥堵 
 		Dijkstra.g.updateEdge(from,to, weight);
-		if(!car.isPreSet())//不是预置车辆才添加路线
+		if(car.nextChannels==null)//不是预置车辆才添加路线
 		{
 			car.realRoute.add(car.nowOnChannel.ID);//添加实际的行车路线
 		}
 		Road road=Main.allRoads.get(ID);
-		road.nowCarsNumber++;
-		if(from.equals(road.getStartId()))
-		{
-			road.forwardFillCoe=road.nowCarsNumber/channelNumber;
-		}
-		else {
-			road.reverseFillCoe=road.nowCarsNumber/channelNumber;
-		}
 	}
 	public void removeCar(Car car) {
 		double weight=nowCarsNumber*1.0/(channelNumber*channelNumber);
@@ -82,13 +74,5 @@ public class Channel {
 		carPortList.remove(0);
 		Dijkstra.g.updateEdge(from, to, -weight);
 		Road road=Main.allRoads.get(ID);
-		road.nowCarsNumber--;
-		if(from.equals(road.getStartId()))
-		{
-			road.forwardFillCoe=road.nowCarsNumber/channelNumber;
-		}
-		else {
-			road.reverseFillCoe=road.nowCarsNumber/channelNumber;
-		}
 	}
 }

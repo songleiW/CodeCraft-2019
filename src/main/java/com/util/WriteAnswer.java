@@ -24,7 +24,7 @@ public class WriteAnswer {
 				for (String carID:Main.saveCarID) {
 					Car car = Main.allCars.get(carID);
 					String id = car.getId();
-					if(car.isPreSet())
+					if(car.isPreSet()&&car.nextChannelList!=null)
 					{
 						continue;
 					}

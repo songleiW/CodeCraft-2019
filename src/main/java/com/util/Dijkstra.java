@@ -16,17 +16,17 @@ public class Dijkstra{
 		{
 			Road road =Main.allRoads.get(roadId);
 			//为每条路添加权值  
-			g.addEdge(road.getStartId(), road.getEndId(),  road.getLength()*2);//为有向图添加边
+			g.addEdge(road.getStartId(), road.getEndId(),  Main.maxChannels*Main.maxLength/road.getChannelNumber());//为有向图添加边
 			if(road.getIsDuplex())
 			{
-				g.addEdge(road.getEndId(), road.getStartId(), road.getLength()*2);
+				g.addEdge(road.getEndId(), road.getStartId(), Main.maxChannels*Main.maxLength/road.getChannelNumber());
 			}
 		}
   }
   //使用动态迪杰斯特拉算法获得下一步想要去的路
   public static boolean getRoute(Car car){
 		String startId;
-		if(car.isPreSet())//如果是预置车辆
+		if(car.isPreSet()&&car.nextChannelList!=null)//如果是预置车辆
 		{
 			if(car.nowOnChannel==null)//第一次发车
 			{

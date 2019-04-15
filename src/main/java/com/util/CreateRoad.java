@@ -8,6 +8,7 @@ import java.util.List;
 import com.common.Car;
 import com.common.Road;
 import com.common.Station;
+import com.huawei.Main;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
@@ -20,7 +21,7 @@ import java.util.Hashtable;
 import java.util.List;
 
 public class CreateRoad {
-	public static ArrayList<String> readRoad(String roadPath, Hashtable<String, Road> roads) {
+	public static void readRoad(String roadPath, Hashtable<String, Road> roads) {
 
 		try (FileReader reader = new FileReader(roadPath); BufferedReader br = new BufferedReader(reader)) {
 			String line = br.readLine();
@@ -35,11 +36,12 @@ public class CreateRoad {
 						Integer.parseInt(strings[6].trim())==1);//是否双向 1表示双向 等式成立
 				roads.put(road.getId().trim(), road);//添加进map
 				roadID.add(road.getId());
+				Main.maxChannels=Math.max(road.getChannelNumber(), Main.maxChannels);
+				Main.maxLength=Math.max(road.getLength(), Main.maxLength);
 			}
-			return roadID;
+			Main.roadID=roadID;
 		} catch (IOException e) {
 			e.printStackTrace();
-			return null;
 		}
 	}
 }

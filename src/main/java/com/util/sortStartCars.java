@@ -5,6 +5,7 @@ import java.util.Collections;
 import java.util.Hashtable;
 
 import com.common.Car;
+import com.common.Channel;
 import com.huawei.Main;
 
 public class sortStartCars {
@@ -40,6 +41,7 @@ public class sortStartCars {
 			}
 		}
 		int i=0;
+		carsId.clear();
 		while(!carsHashtable.isEmpty())
 		{
 			i++;
@@ -48,10 +50,28 @@ public class sortStartCars {
 				for(String id:carsHashtable.get(i))
 				{
 					Car car=Main.allCars.get(id);
-					if(Main.MaxNumberCarsOnRoad-Main.nowOnRoadCarsNumber>=carsId.size()||car.isPreSet())
+					if(!car.isPreSet()&&Main.MaxNumberCarsOnRoad-Main.nowOnRoadCarsNumber<=carsId.size())
 					{
-						carsId.add(id);
+						continue;
 					}
+					if(car.nextChannels==null)
+					{
+						Dijkstra.getRoute(car);//函数内部判断是否是预置车辆
+					}
+					/*if(!car.isPreSet())
+					{
+						ArrayList<Channel> channels=car.nextChannels;
+						int num=0;
+						for(Channel channel:channels)
+						{
+							num+=channel.carPortList.size();
+						}
+						if(num/channels.size()>3)
+						{
+							continue;
+						}
+					}*/
+					carsId.add(id);
 				}
 			}
 			carsHashtable.remove(i);
