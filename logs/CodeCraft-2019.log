@@ -1,19 +1,277 @@
-23:00:53 main INFO com.huawei.Main.main(97) 总时间:87.721s
-23:00:53 main INFO com.huawei.Main.calculateScore(128) 最终调度时间:3051
-23:00:53 main INFO com.huawei.Main.calculateScore(129) 最终总调度时间:65353057
-23:00:53 main INFO com.huawei.Main.calculateScore(130)  
-23:02:41 main INFO com.huawei.Main.main(97) 总时间:87.157s
-23:02:41 main INFO com.huawei.Main.calculateScore(128) 最终调度时间:3301
-23:02:41 main INFO com.huawei.Main.calculateScore(129) 最终总调度时间:74991461
-23:04:33 main INFO com.huawei.Main.main(97) 总时间:90.363s
-23:04:33 main INFO com.huawei.Main.calculateScore(128) 最终调度时间:2970
-23:04:33 main INFO com.huawei.Main.calculateScore(129) 最终总调度时间:62242029
-23:06:09 main INFO com.huawei.Main.main(97) 总时间:72.318s
-23:06:09 main INFO com.huawei.Main.calculateScore(128) 最终调度时间:3144
-23:06:09 main INFO com.huawei.Main.calculateScore(129) 最终总调度时间:69103968
-23:08:29 main INFO com.huawei.Main.main(97) 总时间:75.582s
-23:08:29 main INFO com.huawei.Main.calculateScore(128) 最终调度时间:3144
-23:08:29 main INFO com.huawei.Main.calculateScore(129) 最终总调度时间:69103968
-23:13:06 main INFO com.huawei.Main.main(97) 总时间:93.568s
-23:13:07 main INFO com.huawei.Main.calculateScore(128) 最终调度时间:2970
-23:13:07 main INFO com.huawei.Main.calculateScore(129) 最终总调度时间:62242029
+13:45:47 main INFO com.huawei.Main.main(106) 程序运行时间： 88.806s
+13:45:47 main INFO com.huawei.Main.calculateScore(143) 最终调度时间:2812
+13:45:47 main INFO com.huawei.Main.calculateScore(144) 最终总调度时间:55495580
+
+13:47:11 main INFO com.huawei.Main.main(106) 程序运行时间： 78.913s
+13:47:11 main INFO com.huawei.Main.calculateScore(143) 最终调度时间:2865
+13:47:11 main INFO com.huawei.Main.calculateScore(144) 最终总调度时间:59853878
+
+13:51:33 main INFO com.huawei.Main.main(106) 程序运行时间： 76.683s
+13:51:33 main INFO com.huawei.Main.calculateScore(143) 最终调度时间:2708
+13:51:33 main INFO com.huawei.Main.calculateScore(144) 最终总调度时间:54433312
+
+13:54:36 main INFO com.huawei.Main.main(106) 程序运行时间： 86.795s
+13:54:36 main INFO com.huawei.Main.calculateScore(143) 最终调度时间:2782
+13:54:36 main INFO com.huawei.Main.calculateScore(144) 最终总调度时间:54074141
+
+13:55:55 main INFO com.huawei.Main.main(106) 程序运行时间： 75.878s
+13:55:55 main INFO com.huawei.Main.calculateScore(143) 最终调度时间:2792
+13:55:55 main INFO com.huawei.Main.calculateScore(144) 最终总调度时间:57147291
+
+15:24:29 main INFO com.huawei.Main.main(106) 程序运行时间： 65.508s
+15:24:29 main INFO com.huawei.Main.calculateScore(143) 最终调度时间:2776
+15:24:29 main INFO com.huawei.Main.calculateScore(144) 最终总调度时间:56701966
+
+15:27:08 main INFO com.huawei.Main.main(106) 程序运行时间： 76.144s
+15:27:08 main INFO com.huawei.Main.calculateScore(143) 最终调度时间:2786
+15:27:08 main INFO com.huawei.Main.calculateScore(144) 最终总调度时间:53178138
+
+15:28:51 main INFO com.huawei.Main.main(106) 程序运行时间： 75.878s
+15:28:51 main INFO com.huawei.Main.calculateScore(143) 最终调度时间:2792
+15:28:51 main INFO com.huawei.Main.calculateScore(144) 最终总调度时间:55527975
+
+15:36:37 main INFO com.huawei.Main.main(106) 程序运行时间： 67.792s
+15:36:37 main INFO com.huawei.Main.calculateScore(143) 最终调度时间:2852
+15:36:37 main INFO com.huawei.Main.calculateScore(144) 最终总调度时间:58952963
+
+15:45:48 main INFO com.huawei.Main.main(106) 程序运行时间： 79.576s
+15:45:48 main INFO com.huawei.Main.calculateScore(143) 最终调度时间:2865
+15:45:48 main INFO com.huawei.Main.calculateScore(144) 最终总调度时间:59853878
+
+15:47:21 main INFO com.huawei.Main.main(106) 程序运行时间： 88.852s
+15:47:21 main INFO com.huawei.Main.calculateScore(143) 最终调度时间:2812
+15:47:21 main INFO com.huawei.Main.calculateScore(144) 最终总调度时间:55495580
+
+15:51:56 main INFO com.huawei.Main.main(106) 程序运行时间： 85.059s
+15:51:56 main INFO com.huawei.Main.calculateScore(143) 最终调度时间:2782
+15:51:56 main INFO com.huawei.Main.calculateScore(144) 最终总调度时间:54074141
+
+15:55:46 main INFO com.huawei.Main.main(106) 程序运行时间： 90.486s
+15:55:46 main INFO com.huawei.Main.calculateScore(143) 最终调度时间:2810
+15:55:46 main INFO com.huawei.Main.calculateScore(144) 最终总调度时间:53081449
+
+15:57:58 main INFO com.huawei.Main.main(106) 程序运行时间： 93.349s
+15:57:58 main INFO com.huawei.Main.calculateScore(143) 最终调度时间:2857
+15:57:58 main INFO com.huawei.Main.calculateScore(144) 最终总调度时间:57570208
+
+16:02:13 main INFO com.huawei.Main.main(106) 程序运行时间： 95.098s
+16:02:13 main INFO com.huawei.Main.calculateScore(143) 最终调度时间:2857
+16:02:13 main INFO com.huawei.Main.calculateScore(144) 最终总调度时间:57570208
+
+16:09:49 main INFO com.huawei.Main.main(106) 程序运行时间： 107.196s
+16:09:49 main INFO com.huawei.Main.calculateScore(143) 最终调度时间:2842
+16:09:49 main INFO com.huawei.Main.calculateScore(144) 最终总调度时间:54632422
+
+16:40:21 main INFO com.huawei.Main.main(106) 程序运行时间： 60.745s
+16:40:21 main INFO com.huawei.Main.calculateScore(143) 最终调度时间:3143
+16:40:21 main INFO com.huawei.Main.calculateScore(144) 最终总调度时间:62320200
+
+16:42:46 main INFO com.huawei.Main.main(106) 程序运行时间： 70.741s
+16:42:46 main INFO com.huawei.Main.calculateScore(143) 最终调度时间:4892
+16:42:46 main INFO com.huawei.Main.calculateScore(144) 最终总调度时间:108561460
+
+
+16:48:09 main INFO com.huawei.Main.main(104) 程序运行时间： 75.082s
+16:48:09 main INFO com.huawei.Main.calculateScore(141) 最终调度时间:4546
+16:48:09 main INFO com.huawei.Main.calculateScore(142) 最终总调度时间:99582878
+
+17:01:22 main INFO com.huawei.Main.main(104) 程序运行时间： 47.793s
+17:01:22 main INFO com.huawei.Main.calculateScore(141) 最终调度时间:2619
+17:01:22 main INFO com.huawei.Main.calculateScore(142) 最终总调度时间:52022513
+
+17:03:00 main INFO com.huawei.Main.main(104) 程序运行时间： 47.58s
+17:03:00 main INFO com.huawei.Main.calculateScore(141) 最终调度时间:2759
+17:03:00 main INFO com.huawei.Main.calculateScore(142) 最终总调度时间:55955582
+
+17:05:30 main INFO com.huawei.Main.main(104) 程序运行时间： 56.12s
+17:05:30 main INFO com.huawei.Main.calculateScore(141) 最终调度时间:2771
+17:05:30 main INFO com.huawei.Main.calculateScore(142) 最终总调度时间:57569537
+
+17:06:38 main INFO com.huawei.Main.main(104) 程序运行时间： 49.651s
+17:06:38 main INFO com.huawei.Main.calculateScore(141) 最终调度时间:2866
+17:06:38 main INFO com.huawei.Main.calculateScore(142) 最终总调度时间:61692229
+
+17:12:43 main INFO com.huawei.Main.main(104) 程序运行时间： 49.08s
+17:12:43 main INFO com.huawei.Main.calculateScore(141) 最终调度时间:2583
+17:12:43 main INFO com.huawei.Main.calculateScore(142) 最终总调度时间:51027367
+
+17:18:20 main INFO com.huawei.Main.main(110) 程序运行时间： 59.02s
+17:18:20 main INFO com.huawei.Main.calculateScore(147) 最终调度时间:2771
+17:18:20 main INFO com.huawei.Main.calculateScore(148) 最终总调度时间:57569537
+
+17:21:54 main INFO com.huawei.Main.main(103) 程序运行时间： 49.241s
+17:21:54 main INFO com.huawei.Main.calculateScore(140) 最终调度时间:2551
+17:21:54 main INFO com.huawei.Main.calculateScore(141) 最终总调度时间:49720862
+
+17:32:24 main INFO com.huawei.Main.main(103) 程序运行时间： 49.214s
+17:32:24 main INFO com.huawei.Main.calculateScore(140) 最终调度时间:2551
+17:32:24 main INFO com.huawei.Main.calculateScore(141) 最终总调度时间:49720862
+
+17:37:38 main INFO com.huawei.Main.main(103) 程序运行时间： 57.897s
+17:37:38 main INFO com.huawei.Main.calculateScore(140) 最终调度时间:2771
+17:37:38 main INFO com.huawei.Main.calculateScore(141) 最终总调度时间:57569537
+
+18:04:42 main INFO com.huawei.Main.main(103) 程序运行时间： 101.763s
+18:04:42 main INFO com.huawei.Main.calculateScore(140) 最终调度时间:3175
+18:04:42 main INFO com.huawei.Main.calculateScore(141) 最终总调度时间:49286037
+
+18:06:41 main INFO com.huawei.Main.main(103) 程序运行时间： 81.61s
+18:06:41 main INFO com.huawei.Main.calculateScore(140) 最终调度时间:3113
+18:06:41 main INFO com.huawei.Main.calculateScore(141) 最终总调度时间:49099311
+
+23:18:06 main INFO com.huawei.Main.main(103) 程序运行时间： 74.073s
+23:18:06 main INFO com.huawei.Main.calculateScore(140) 最终调度时间:2741
+23:18:06 main INFO com.huawei.Main.calculateScore(141) 最终总调度时间:54710654
+
+23:23:13 main INFO com.huawei.Main.main(103) 程序运行时间： 74.914s
+23:23:13 main INFO com.huawei.Main.calculateScore(141) 最终调度时间:2741
+23:23:13 main INFO com.huawei.Main.calculateScore(142) 最终总调度时间:54710654
+
+14:05:31 main INFO com.huawei.Main.main(103) 程序运行时间： 100.217s
+14:05:31 main INFO com.huawei.Main.calculateScore(141) 最终调度时间:2910
+14:05:31 main INFO com.huawei.Main.calculateScore(142) 最终总调度时间:42268050
+
+14:06:22 main INFO com.huawei.Main.main(103) 程序运行时间： 46.216s
+14:06:22 main INFO com.huawei.Main.calculateScore(141) 最终调度时间:1895
+14:06:22 main INFO com.huawei.Main.calculateScore(142) 最终总调度时间:41451736
+
+14:21:24 main INFO com.huawei.Main.main(103) 程序运行时间： 46.394s
+14:21:24 main INFO com.huawei.Main.calculateScore(141) 最终调度时间:1815
+14:21:24 main INFO com.huawei.Main.calculateScore(142) 最终总调度时间:39375350
+
+14:22:24 main INFO com.huawei.Main.main(103) 程序运行时间： 48.703s
+14:22:24 main INFO com.huawei.Main.calculateScore(141) 最终调度时间:2089
+14:22:24 main INFO com.huawei.Main.calculateScore(142) 最终总调度时间:56696145
+
+14:25:29 main INFO com.huawei.Main.main(103) 程序运行时间： 50.138s
+14:25:29 main INFO com.huawei.Main.calculateScore(141) 最终调度时间:2020
+14:25:29 main INFO com.huawei.Main.calculateScore(142) 最终总调度时间:54521897
+
+14:29:30 main INFO com.huawei.Main.main(103) 程序运行时间： 49.156s
+14:29:30 main INFO com.huawei.Main.calculateScore(141) 最终调度时间:1996
+14:29:30 main INFO com.huawei.Main.calculateScore(142) 最终总调度时间:54557293
+
+14:30:32 main INFO com.huawei.Main.main(103) 程序运行时间： 47.354s
+14:30:32 main INFO com.huawei.Main.calculateScore(141) 最终调度时间:1824
+14:30:32 main INFO com.huawei.Main.calculateScore(142) 最终总调度时间:39451254
+
+14:34:37 main INFO com.huawei.Main.main(103) 程序运行时间： 44.847s
+14:34:37 main INFO com.huawei.Main.calculateScore(141) 最终调度时间:1663
+14:34:37 main INFO com.huawei.Main.calculateScore(142) 最终总调度时间:34795185
+
+14:35:38 main INFO com.huawei.Main.main(103) 程序运行时间： 43.711s
+14:35:38 main INFO com.huawei.Main.calculateScore(141) 最终调度时间:1533
+14:35:38 main INFO com.huawei.Main.calculateScore(142) 最终总调度时间:30996566
+
+14:39:27 main INFO com.huawei.Main.main(103) 程序运行时间： 43.626s
+14:39:27 main INFO com.huawei.Main.calculateScore(141) 最终调度时间:1533
+14:39:27 main INFO com.huawei.Main.calculateScore(142) 最终总调度时间:30996566
+
+14:41:28 main INFO com.huawei.Main.main(103) 程序运行时间： 49.409s
+14:41:28 main INFO com.huawei.Main.calculateScore(141) 最终调度时间:2020
+14:41:28 main INFO com.huawei.Main.calculateScore(142) 最终总调度时间:54521897
+
+14:47:46 main INFO com.huawei.Main.main(103) 程序运行时间： 206.622s
+14:47:46 main INFO com.huawei.Main.calculateScore(141) 最终调度时间:3056
+14:47:46 main INFO com.huawei.Main.calculateScore(142) 最终总调度时间:47723042
+
+14:53:52 main INFO com.huawei.Main.main(103) 程序运行时间： 48.702s
+14:53:52 main INFO com.huawei.Main.calculateScore(141) 最终调度时间:2022
+14:53:52 main INFO com.huawei.Main.calculateScore(142) 最终总调度时间:54447928
+
+14:55:01 main INFO com.huawei.Main.main(103) 程序运行时间： 49.464s
+14:55:01 main INFO com.huawei.Main.calculateScore(141) 最终调度时间:1952
+14:55:01 main INFO com.huawei.Main.calculateScore(142) 最终总调度时间:43409423
+
+15:06:41 main INFO com.huawei.Main.main(103) 程序运行时间： 46.988s
+15:06:41 main INFO com.huawei.Main.calculateScore(141) 最终调度时间:1957
+15:06:41 main INFO com.huawei.Main.calculateScore(142) 最终总调度时间:43458787
+
+15:07:34 main INFO com.huawei.Main.main(103) 程序运行时间： 51.796s
+15:07:34 main INFO com.huawei.Main.calculateScore(141) 最终调度时间:1996
+15:07:34 main INFO com.huawei.Main.calculateScore(142) 最终总调度时间:54557293
+
+15:11:03 main INFO com.huawei.Main.main(103) 程序运行时间： 49.76s
+15:11:03 main INFO com.huawei.Main.calculateScore(141) 最终调度时间:1996
+15:11:03 main INFO com.huawei.Main.calculateScore(142) 最终总调度时间:54557293
+
+15:15:38 main INFO com.huawei.Main.main(103) 程序运行时间： 45.323s
+15:15:38 main INFO com.huawei.Main.calculateScore(141) 最终调度时间:1718
+15:15:38 main INFO com.huawei.Main.calculateScore(142) 最终总调度时间:36192154
+
+15:20:19 main INFO com.huawei.Main.main(103) 程序运行时间： 153.481s
+15:20:19 main INFO com.huawei.Main.calculateScore(141) 最终调度时间:2921
+15:20:19 main INFO com.huawei.Main.calculateScore(142) 最终总调度时间:38468121
+
+15:23:21 main INFO com.huawei.Main.main(103) 程序运行时间： 44.941s
+15:23:21 main INFO com.huawei.Main.calculateScore(141) 最终调度时间:1718
+15:23:21 main INFO com.huawei.Main.calculateScore(142) 最终总调度时间:36192154
+
+15:24:43 main INFO com.huawei.Main.main(103) 程序运行时间： 45.623s
+15:24:43 main INFO com.huawei.Main.calculateScore(141) 最终调度时间:1824
+15:24:43 main INFO com.huawei.Main.calculateScore(142) 最终总调度时间:39451254
+
+15:25:43 main INFO com.huawei.Main.main(103) 程序运行时间： 45.827s
+15:25:43 main INFO com.huawei.Main.calculateScore(141) 最终调度时间:1895
+15:25:43 main INFO com.huawei.Main.calculateScore(142) 最终总调度时间:41451736
+
+15:26:36 main INFO com.huawei.Main.main(103) 程序运行时间： 47.856s
+15:26:36 main INFO com.huawei.Main.calculateScore(141) 最终调度时间:2036
+15:26:36 main INFO com.huawei.Main.calculateScore(142) 最终总调度时间:45802927
+
+15:27:47 main INFO com.huawei.Main.main(103) 程序运行时间： 46.488s
+15:27:47 main INFO com.huawei.Main.calculateScore(141) 最终调度时间:1957
+15:27:47 main INFO com.huawei.Main.calculateScore(142) 最终总调度时间:43458787
+
+15:31:06 main INFO com.huawei.Main.main(103) 程序运行时间： 48.149s
+15:31:06 main INFO com.huawei.Main.calculateScore(141) 最终调度时间:1956
+15:31:06 main INFO com.huawei.Main.calculateScore(142) 最终总调度时间:43470343
+
+15:32:33 main INFO com.huawei.Main.main(103) 程序运行时间： 48.944s
+15:32:33 main INFO com.huawei.Main.calculateScore(141) 最终调度时间:2062
+15:32:33 main INFO com.huawei.Main.calculateScore(142) 最终总调度时间:54604148
+
+15:35:02 main INFO com.huawei.Main.main(103) 程序运行时间： 51.332s
+15:35:02 main INFO com.huawei.Main.calculateScore(141) 最终调度时间:2095
+15:35:02 main INFO com.huawei.Main.calculateScore(142) 最终总调度时间:56994490
+
+15:36:56 main INFO com.huawei.Main.main(103) 程序运行时间： 48.604s
+15:36:56 main INFO com.huawei.Main.calculateScore(141) 最终调度时间:1956
+15:36:56 main INFO com.huawei.Main.calculateScore(142) 最终总调度时间:43470343
+
+15:38:13 main INFO com.huawei.Main.main(103) 程序运行时间： 47.254s
+15:38:13 main INFO com.huawei.Main.calculateScore(141) 最终调度时间:1821
+15:38:13 main INFO com.huawei.Main.calculateScore(142) 最终总调度时间:39448931
+
+15:39:03 main INFO com.huawei.Main.main(103) 程序运行时间： 44.725s
+15:39:03 main INFO com.huawei.Main.calculateScore(141) 最终调度时间:1653
+15:39:03 main INFO com.huawei.Main.calculateScore(142) 最终总调度时间:34812215
+
+15:39:54 main INFO com.huawei.Main.main(103) 程序运行时间： 45.228s
+15:39:54 main INFO com.huawei.Main.calculateScore(141) 最终调度时间:1573
+15:39:54 main INFO com.huawei.Main.calculateScore(142) 最终总调度时间:32183366
+
+15:41:09 main INFO com.huawei.Main.main(103) 程序运行时间： 44.627s
+15:41:09 main INFO com.huawei.Main.calculateScore(141) 最终调度时间:1541
+15:41:09 main INFO com.huawei.Main.calculateScore(142) 最终总调度时间:31051123
+
+15:43:54 main INFO com.huawei.Main.main(103) 程序运行时间： 49.57s
+15:43:54 main INFO com.huawei.Main.calculateScore(141) 最终调度时间:2062
+15:43:54 main INFO com.huawei.Main.calculateScore(142) 最终总调度时间:54604148
+
+15:45:18 main INFO com.huawei.Main.main(103) 程序运行时间： 51.024s
+15:45:18 main INFO com.huawei.Main.calculateScore(141) 最终调度时间:2221
+15:45:18 main INFO com.huawei.Main.calculateScore(142) 最终总调度时间:60158123
+
+15:47:50 main INFO com.huawei.Main.main(103) 程序运行时间： 49.705s
+15:47:50 main INFO com.huawei.Main.calculateScore(141) 最终调度时间:2113
+15:47:50 main INFO com.huawei.Main.calculateScore(142) 最终总调度时间:56828992
+
+15:49:01 main INFO com.huawei.Main.main(103) 程序运行时间： 49.323s
+15:49:01 main INFO com.huawei.Main.calculateScore(141) 最终调度时间:1996
+15:49:01 main INFO com.huawei.Main.calculateScore(142) 最终总调度时间:54557293
+
+15:52:14 main INFO com.huawei.Main.main(103) 程序运行时间： 49.12s
+15:52:14 main INFO com.huawei.Main.calculateScore(141) 最终调度时间:2036
+15:52:14 main INFO com.huawei.Main.calculateScore(142) 最终总调度时间:54574044
+
