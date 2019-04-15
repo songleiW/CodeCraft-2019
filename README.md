@@ -51,7 +51,7 @@
  
    情况是线上发车是按 车id》实际发车时间来排序的，但是对于预置车辆，预置发车时间在我的算法中并不一定能按时发车的，因此在线下发车排序中，我对每个周期可以出发的车 做如下排序：
    
-   数据结构是hashtable<startTime,ArrayList<carID>> >
+   数据结构是hashtable< startTime,ArrayList<carID> >
    
    发车时间作为key值，value是车的id用列表,即统一时刻发车的在同一list中。
    
